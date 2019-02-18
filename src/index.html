@@ -7,36 +7,42 @@
   </head>
   <body>
     <div id="root"></div>
-    
-    <header>
+   
       <h1>WORLD BANK </h1>
 
-    </header>
-
-    <main>
-
-      <label for="conuntry">Filtrar por país</label>
-      <select id = country>
-      <option value="">Selecciona</option>
+      <!-- opcion filtar por pais -->
+      <label for="country">Filtrar por país</label> <!-- etiqueta con nombre filtrar por país -->
+      <select id = country> <!-- selector para país con un identificador para después llamarlo desde js -->
+      <option value="">Seleccionar</option> <!-- agregar opción fija para seleccionar -->
      </select> <br><br><br>
         
-     <label for="year">Filtrar por año</label>
-     <select id ="year">
-     <option value="">Selecciona</option>
+      <!-- opcion filtar por indicador -->
+      <label for="select-indicator">Filtrar por indicador</label> <!-- etiqueta con nombre filtrar por indicador-->
+      <select id ="select-indicator"> <!-- selector para indicador -->
+      <option value="">Selecciona</option><!-- agregar opción fija para seleccionar -->
     </select> <br><br><br>
 
 
-      <label for="select-indicator">Filtrar por indicador</label>
-      <select id ="select-indicator">
-      <option value="">Selecciona</option>
-      </select> <br><br><br>
+     <!-- opcion filtar por año -->
+     <label for="year">Filtrar por año desde </label> <!-- etiqueta con nombre filtrar por año -->
+     <select id ="year"> <!-- selector para año -->
+     <option value="">Selecciona</option> <!-- agregar opción fija para seleccionar -->
+    </select> 
 
-      
+    <label for="year-dos">Filtrar por año hasta</label> <!-- etiqueta con nombre filtrar por año -->
+    <select id ="year-dos"> <!-- selector para año -->
+    <option value="">Selecciona</option> <!-- agregar opción fija para seleccionar -->
+   </select> 
 
-    </main>
+    <div id= results></div> <!-- mostrar resultados -->
 
 
 
+
+     
+
+    
+  
    <script src="./data/worldbank/worldbank.js"></script> 
     
     <script src="data.js"></script>

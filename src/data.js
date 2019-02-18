@@ -7,8 +7,16 @@
 
 //window.example = worldBank;}
 
+//const filterD
 
-const filterData = (wBData, criteria) => {
-  wBData[criteria.country]
-  if (wBData[criteria.country].indicadores[contador].indicatorName  == criteria.indidcator)
-};
+
+
+
+
+
+//const filterData = (wBData, criteria) => {
+  //wBData[criteria.country]
+  //if (wBData[criteria.country].indicadores[contador].indicatorName  == criteria.indidcator)
+//};
+
+//window.filter = filter
