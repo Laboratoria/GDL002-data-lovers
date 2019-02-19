@@ -1,22 +1,30 @@
-// esta es una función de ejemplo
-// puedes ver como agregamos la función a nuestro objeto global window
 
-//const worldBank = () => {
-  //return 'worldBank';
-//};
+/*
+COUNTRY:   "PER", "MEX","BRA", "CHL" 
+string
 
-//window.example = worldBank;}
+INDICATORS 
+string
 
-//const filterD
+YEAR
+number
 
-
-
-
+ret
 
 
-//const filterData = (wBData, criteria) => {
-  //wBData[criteria.country]
-  //if (wBData[criteria.country].indicadores[contador].indicatorName  == criteria.indidcator)
-//};
 
-//window.filter = filter
+*/
+          
+const filterData = (country,indicatorNm,year) => {
+ const countryData = WORLDBANK[country]
+ const countryIndicators = countryData.indicators
+  for (let i= 0;  i < countryIndicators.length; i++) {
+   const indicatorData= countryIndicators[i]
+   if (indicatorData.indicatorName == indicatorNm ) {
+    alert (indicatorData.data[year])
+   };
+
+  };
+}
+
+window.filterData = filterData 
