@@ -27,4 +27,13 @@ const filterData = (country,indicatorNm,year) => {
   };
 }
 
+
+
+
+
+
+
+
+
+
 window.filterData = filterData 

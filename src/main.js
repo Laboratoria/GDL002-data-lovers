@@ -54,3 +54,26 @@ loadYear();
 loadYear2 ();
 ctSelector.addEventListener ("change", loadIndicator)
 window.filterData ("MEX","Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)", "2016")
+
+//Función para botón buscar, cambiar de pantalla
+
+const search = () => {
+    document.getElementById("choose-data").style.display = "none";
+    document.getElementById("results").style.display = "inline";
+}
+document.getElementById("search").addEventListener ("click", search);
+
+
+
+//Función para mostrar resultados
+
+//const show results = () => {  // mostrar resultad
+    //const despl = parseInt(document.getElementById("cajaDesplazamientos").value); // pqeSeint
+    //let secret = document.getElementById("cajaTexto").value;
+    //let resultado; 
+    
+    //resultado = cipher.encode( despl, secret); 
+     
+    //document.getElementById("cajaResultado").value = resultado;
+}
+//document.getElementById("encrip").addEventListener ("click", ejecutaEncriptado);
