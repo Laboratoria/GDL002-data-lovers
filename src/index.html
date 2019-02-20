@@ -12,7 +12,7 @@
 
       <!-- opcion filtar por pais -->
       <label for="country">Filtrar por país</label> <!-- etiqueta con nombre filtrar por país -->
-      <select id = country> <!-- selector para país con un identificador para después llamarlo desde js -->
+      <select id = "country"> <!-- selector para país con un identificador para después llamarlo desde js -->
       <option value="">Seleccionar</option> <!-- agregar opción fija para seleccionar -->
      </select> <br><br><br>
         
@@ -24,18 +24,19 @@
 
 
      <!-- opcion filtar por año -->
-     <label for="year">Filtrar por año desde </label> <!-- etiqueta con nombre filtrar por año -->
-     <select id ="year"> <!-- selector para año -->
+     <label for="since-year">Filtrar por año desde </label> <!-- etiqueta con nombre filtrar por año -->
+     <select id ="since-year"> <!-- selector para año -->
      <option value="">Selecciona</option> <!-- agregar opción fija para seleccionar -->
     </select> 
 
-    <label for="year-dos">Filtrar por año hasta</label> <!-- etiqueta con nombre filtrar por año -->
-    <select id ="year-dos"> <!-- selector para año -->
+    <label for="until-year">Filtrar por año hasta</label> <!-- etiqueta con nombre filtrar por año -->
+    <select id ="until-year"> <!-- selector para año -->
     <option value="">Selecciona</option> <!-- agregar opción fija para seleccionar -->
    </select> <br><br><br>
    <button id = "search">Buscar</button> 
   </div>
     <div id= results> <!-- mostrar resultados -->
+      <p type="text" id= "filter"  ></p> <br>
 
     </div>
 

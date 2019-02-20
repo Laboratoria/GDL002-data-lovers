@@ -1,19 +1,6 @@
 
-/*
-COUNTRY:   "PER", "MEX","BRA", "CHL" 
-string
-
-INDICATORS 
-string
-
-YEAR
-number
-
-ret
 
 
-
-*/
           
 const filterData = (country,indicatorNm,year) => {
  const countryData = WORLDBANK[country]
@@ -26,10 +13,6 @@ const filterData = (country,indicatorNm,year) => {
 
   };
 }
-
-
-
-
 
 
 
