@@ -8,8 +8,8 @@ const filterData = (country,indicatorNm,year) => {
   for (let i= 0;  i < countryIndicators.length; i++) {
    const indicatorData= countryIndicators[i]
    if (indicatorData.indicatorName == indicatorNm ) {
-    alert (indicatorData.data[year])
-   };
+    return indicatorData.data[year];
+   }
 
   };
 }
