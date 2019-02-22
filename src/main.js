@@ -4,23 +4,23 @@ const mostrarData = () => {
 
  document.getElementById("Enter").addEventListener("click",mostrarData);
 
- function fillElements (injuriesList, divElement){
+ function fillElements (injuriesList, buttonElement){
  for(let i=0; i<injuriesList.length; i++) {
-    let divInjurie = document.createElement("div");
-    divInjurie.className = "injurie";
+    let buttonInjurie = document.createElement("button");
+    buttonInjurie.className = "injurie";
     let array = INJURIES[i].Year;
     const newArray = parseInt(array);
     if(newArray<=2016 & newArray>=2000){
-      divInjurie.innerHTML = newArray;
-      divElement.insertAdjacentElement("beforeend", divInjurie);
+      buttonInjurie.innerHTML = newArray;
+      buttonElement.insertAdjacentElement("beforeend", buttonInjurie);
     }
   }
  }
 
  function showInjuries(){
  let injuriesList = INJURIES;
- let divInjuriesList = document.getElementById("totalData");
- fillElements(injuriesList, divInjuriesList);
+ let buttonInjuriesList = document.getElementById("totalData");
+ fillElements(injuriesList, buttonInjuriesList);
  }
  document.getElementById("Enter").addEventListener("click",showInjuries);
 

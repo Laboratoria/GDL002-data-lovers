@@ -1,10 +1,4 @@
 window.data = {
-
-  chain: (word, quantity) => {
-    let finalInfo = mostrarPalabra() + " " + mostrarNumeros();
-    return finalInfo;
-  },
- 
  mostrarPalabra: () => {
   let word;
   for(let i = 0; i <= INJURIES.length; i++){
