@@ -6,12 +6,12 @@ const mostrarData = () => {
 
  function fillElements (injuriesList, buttonElement){
  for(let i=0; i<injuriesList.length; i++) {
-    let buttonInjurie = document.createElement("button");
-    buttonInjurie.className = "injurie";
+    let buttonInjurie = document.createElement("span");
+    buttonInjurie.id = 'Injurie' + [i];
     let array = INJURIES[i].Year;
     const newArray = parseInt(array);
     if(newArray<=2016 & newArray>=2000){
-      buttonInjurie.innerHTML = newArray;
+      buttonInjurie.innerHTML = newArray + "<br>";
       buttonElement.insertAdjacentElement("beforeend", buttonInjurie);
     }
   }
