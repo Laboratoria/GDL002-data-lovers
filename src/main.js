@@ -2,26 +2,30 @@ const mostrarData = () => {
   const show = document.getElementById("Info").style.display = "block";
  }
 
- document.getElementById("Enter").addEventListener("click",mostrarData);
+//document.getElementById("filtrar").addEventListener("change",mostrarData);
 
- function fillElements (injuriesList, buttonElement){
- for(let i=0; i<injuriesList.length; i++) {
-    let buttonInjurie = document.createElement("span");  
-    buttonInjurie.id = 'Injurie' + [i];
-    let array = INJURIES[i].Year;
-    const newArray = parseInt(array);
-    if(newArray<=2016 & newArray>=2000){
-      buttonInjurie.innerHTML =`${newArray} <button id = "arrowDown${i}">i</button><br />`;
-      buttonElement.insertAdjacentElement("beforeend", buttonInjurie);
-    }
+const showInjuries = () => {
+    let injuriesList = INJURIES;
+    let buttonInjuriesList = document.getElementById("totalData");
+    window.data.fillElements(injuriesList, buttonInjuriesList);
   }
- }
 
- function showInjuries(){
- let injuriesList = INJURIES;
- let buttonInjuriesList = document.getElementById("totalData");
- fillElements(injuriesList, buttonInjuriesList);
- }
- document.getElementById("Enter").addEventListener("click",showInjuries);
+//document.getElementById("filtrar").addEventListener("change",showInjuries);
 
- 
+const buttonFunctions = () =>{
+  window.data.mostrarNumeros();
+}
+
+ const filtrados = () =>{
+   const values = document.getElementById("filtrar").value;
+   switch(values){
+    case 'Year':
+      mostrarData();
+      showInjuries();
+      break;
+   // case "filterForRisk":
+
+   }
+ }
+//console.log(filterInfo());
+// document.getElementById("filterForYear").addEventListener("change",filterInfo);

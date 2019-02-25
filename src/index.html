@@ -8,22 +8,21 @@
  <body>
    <div id="root"></div>
    <script src="./data/injuries/injuries.js"></script>
-
-        <button id="Enter">Iniciar</button>
-
-          <select id="filtrar">
-            <option>Filtrar</option>
-            <option value="filterForYear">Por año</option>
-            <option value="filterForRisk">Por tipo de riesgo</option>
-            <option value="filterForNumberOfInjuries">Por no. de lesiones</option>
-        </select>
-        
-        <section id="Info">
-        <div id="totalData">
-        </div>
-        <span id="Resultado"></span>
+    <form>
+      <select id="filtrar" onchange="filtrados()">
+        <option>Selecciona</option>
+        <option value="Year">Por año</option>
+        <option value="filterForRisk">Por tipo de riesgo</option>
+        <option value="filterForNumberOfInjuries">Por no. de lesiones</option>
+      </select>
+    </form>
+  <!-- <button id="Enter">Filtrar</button> -->
+      <section id="Info">
+      <div id="totalData">
+      </div>
+      <span id="Resultado"></span>
+      
       </section>
-
    <script src="data.js"></script>
    <script src="main.js"></script>
  </body>
