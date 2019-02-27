@@ -1,20 +1,16 @@
 const mostrarData = () => {
-  const show = document.getElementById("Info").style.display = "block";
- }
-
-//document.getElementById("filtrar").addEventListener("change",mostrarData);
+  document.getElementById("Info").style.display = "block";
+ };
 
 const showInjuries = () => {
     let injuriesList = INJURIES;
     let buttonInjuriesList = document.getElementById("totalData");
     window.data.fillElements(injuriesList, buttonInjuriesList);
-  }
-
-//document.getElementById("filtrar").addEventListener("change",showInjuries);
+};
 
 const buttonFunctions = () =>{
   window.data.mostrarNumeros();
-}
+};
 
  const filtrados = () =>{
    const values = document.getElementById("filtrar").value;
@@ -26,6 +22,10 @@ const buttonFunctions = () =>{
    // case "filterForRisk":
 
    }
- }
-//console.log(filterInfo());
-// document.getElementById("filterForYear").addEventListener("change",filterInfo);
+ };
+ document.getElementById('filtrar').addEventListener('change',filtrados);
+
+
+
+ 
+

@@ -11,13 +11,14 @@ window.data = {
  },
  
  mostrarNumeros: () => {
-  let quantity;
-  for(let i = 0; i <INJURIES.length; i++){
-      quantity =INJURIES[i].Year;
-      document.getElementById("Resultado").innerHTML = quantity;
- }
-  return quantity;
- },
+  const valueButton = event.target.value;
+  const years = INJURIES.filter(INJURIE => valueButton == INJURIE.Year);
+  for(let i = 0; i<33; i++){
+    const result = Object.keys(years[0])[i] + ':' + Object.values(years[0])[i];
+    document.getElementById("Resultado").innerHTML += result + `<br />`;
+  }
+},
+ 
  
 fillElements: (injuriesList, buttonElement) => {
   for(let i=0; i<injuriesList.length; i++) {
@@ -26,13 +27,13 @@ fillElements: (injuriesList, buttonElement) => {
      let array = injuriesList[i].Year;
      const newArray = parseInt(array);
      if(newArray<=2016 & newArray>=2000){
-      buttonInjurie.innerHTML =`${newArray} <button id = "arrowDown${i}" onclick = buttonFunctions()>i</button><br />`;
+      buttonInjurie.innerHTML =`${newArray} <button value = "${array}" onclick = buttonFunctions()>i</button><br />`;
       buttonElement.insertAdjacentElement("beforeend", buttonInjurie);
      }
    }
   }
- }
+ };
 
- //mostrarAño
+ 
 
  
