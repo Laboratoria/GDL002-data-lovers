@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+body{
+  font-size: 12px;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+}
+
+.background{
+  display: block;
+  width: 100%;
+}
+
+.pokemon{
+  float:left;
+  background-color: white;
+}
+
+#fourPokemons{
+width: 40%;
+}
+
+#options{
+  text-align: left;
+  padding: 0% 15% 0% 20% ;
+}
+
+#continueButton {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.95em;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    background: #F3F30B;
+    padding: 0% 5%;
+    line-height: 55px;
+}
+
+#displayPokemonList{
+   display: none;
+}
+
+#displayAverage{
+  display:none;
+}
+
+#box{
+display: flex;
+justify-content: space-between;
+}
+
+#limpiar{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.85em;
+  background-color: #F3F30B;
+  width: 8.5%;
+}
+
+#goStart{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.85em;
+  height: 50px;
+background: #EF1A8E;
+-moz-border-radius: 100%;
+-webkit-border-radius: 100%;
+}
+
+#typeOfPokemon{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.85em;
+  background-color: #5CEF1A;
+  width: 15%;
+  height: 150px;
+}
+
+h1{
+  font-size: 180%;
+}
+
+#average{
+ font-family: 'Press Start 2P', cursive;
+ font-size: 0.85em;
+ background-color: #286BB8;
+ width: 8.5%;
+ height: 110px;/* ¿por qué no puedo ponerlo en porcentaje? si lo pongo en porcentaje no responde*/
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+}
