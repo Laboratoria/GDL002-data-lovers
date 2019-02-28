@@ -1,28 +1,47 @@
 <!DOCTYPE html>
 <html>
- <head>
-   <meta charset="utf-8">
-   <title>Data Lovers</title>
-   <link rel="stylesheet" href="style.css" />
- </head>
- <body>
-   <div id="root"></div>
-   <script src="./data/injuries/injuries.js"></script>
-    <form>
-      <select id="filtrar">
-        <option>Selecciona</option>
-        <option value="Year">Por año</option>
-        <option value="filterForRisk">Por tipo de riesgo</option>
-        <option value="filterForNumberOfInjuries">Por no. de lesiones</option>
-      </select>
-    </form>
-      <section id="Info">
-      <div id="totalData">
-      </div>
-      <span id="Resultado"></span>
-      
-      </section>
-   <script src="data.js"></script>
-   <script src="main.js"></script>
- </body>
+<head>
+  <meta charset="utf-8">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section class="generalBlock" id="welcomeBlock"></section>
+  <script src="./data/injuries/injuries.js"></script>
+
+   <button id="Enter">Iniciar</button>
+   <section class="generalBlock" id="infoBlock">
+
+     <select class="optionalMenu" id="filterMenu">
+       <option>Filtrar</option>
+       <option value="filterForYear">Por año</option>
+       <option value="filterForRisk">Por tipo de riesgo</option>
+       <option value="filterForTotalInjuries">Por total de lesiones</option>
+     </select>
+
+     <select class="optionalMenu" id="orderMenu">
+       <option>Ordenar</option>
+       <option value="lastToFirst">De mayor a menor</option>
+       <option value="FirstToLast">De menor a mayor</option>
+     </select>
+     <select class="optionalMenu" id="calculusMenu">
+       <option>Calcular</option>
+       <option value="filterForYear">Por año</option>
+       <option value="filterForRisk">Por tipo de riesgo</option>
+       <option value="filterForTotalInjuries">Por total de lesiones</option>
+     </select>
+
+     <div id="totalData">
+     </div>
+    <div>
+    <span id="Resultado"></span>
+    <button id="closeModal">X</button>
+    </div>
+   </section>
+
+   <section class="generalBlock" id="compareBlock"></section>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
 </html>

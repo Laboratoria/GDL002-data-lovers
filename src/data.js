@@ -11,10 +11,13 @@ window.data = {
  },
  
  mostrarNumeros: () => {
+  document.getElementById("Resultado").innerHTML = "";
+  document.getElementById("closeModal").style.display = "block";
+  document.getElementById("Resultado").style.display = "block";
   const valueButton = event.target.value;
   const years = INJURIES.filter(INJURIE => valueButton == INJURIE.Year);
-  for(let i = 0; i<33; i++){
-    const result = Object.keys(years[0])[i] + ':' + Object.values(years[0])[i];
+  for(let i = 0; i<48; i++){
+    const result = Object.keys(years[0])[i] + ":" + Object.values(years[0])[i];
     document.getElementById("Resultado").innerHTML += result + `<br />`;
   }
 },
@@ -23,16 +26,20 @@ window.data = {
 fillElements: (injuriesList, buttonElement) => {
   for(let i=0; i<injuriesList.length; i++) {
      let buttonInjurie = document.createElement("span");  
-     buttonInjurie.id = 'Injurie' + [i];
+     buttonInjurie.id = "Injurie" + [i];
      let array = injuriesList[i].Year;
      const newArray = parseInt(array);
      if(newArray<=2016 & newArray>=2000){
-      buttonInjurie.innerHTML =`${newArray} <button value = "${array}" onclick = buttonFunctions()>i</button><br />`;
+      buttonInjurie.innerHTML =`${newArray} <button value = "${array}" onclick = "window.data.mostrarNumeros()" >i</button><br />`;
       buttonElement.insertAdjacentElement("beforeend", buttonInjurie);
+      
      }
    }
+   //document.getElementsByName("array").addEventListener("click",window.data.mostrarNumeros());
   }
+  
  };
+ 
 
  
 
