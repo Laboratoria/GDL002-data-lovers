@@ -25,13 +25,19 @@ window.data = {
  
 fillElements: (injuriesList, buttonElement) => {
   for(let i=0; i<injuriesList.length; i++) {
-     let buttonInjurie = document.createElement("span");  
-     buttonInjurie.id = "Injurie" + [i];
-     let array = injuriesList[i].Year;
-     const newArray = parseInt(array);
-     if(newArray<=2016 & newArray>=2000){
-      buttonInjurie.innerHTML =`${newArray} <button value = "${array}" onclick = "window.data.mostrarNumeros()" >i</button><br />`;
-      buttonElement.insertAdjacentElement("beforeend", buttonInjurie);
+     let spanInjurie = document.createElement("span");  
+     spanInjurie.id = "Injurie" + [i];
+     let year = parseInt(injuriesList[i].Year);
+     //const newArray = parseInt(year);
+     if(year <=2016 & year>=2000){
+       let buttonInjurie = document.createElement("button");
+       buttonInjurie.value = year;
+       spanInjurie.appendChild(buttonInjurie);
+       //document.getElementById("Resultado").innerHTML = year + ":" + buttonInjurie;
+       //document.getElementById("Resultado").innerHTML = `${year} : ${buttonInjurie}`;
+      //spanInjurie.innerHTML = `${year} ${buttonInjurie} <br />`
+      spanInjurie.innerHTML =`${year} <button name="button" value = "${year}">i</button><br />`;
+      buttonElement.insertAdjacentElement("beforeend", spanInjurie);
       
      }
    }

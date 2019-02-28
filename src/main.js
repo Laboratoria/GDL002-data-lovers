@@ -32,6 +32,9 @@ const mostrarData = () => {
  };
  document.getElementById("closeModal").addEventListener("click",closeModal);
 
- document.getElementsByName("array").addEventListener("click",window.data.mostrarNumeros());
+ const activateButton = document.getElementsByName("button");
+ //console.log(activateButton);
+ const arrayButton = Array.from("activateButton");
+ console.log(arrayButton);
 
 
