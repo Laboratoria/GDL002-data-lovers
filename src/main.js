@@ -5,9 +5,8 @@ const mostrarData = () => {
  
  
  const showInjuries = () => {
-    let injuriesList = INJURIES;
     let buttonInjuriesList = document.getElementById("totalData");
-    window.data.fillElements(injuriesList, buttonInjuriesList);
+    window.data.fillElements(INJURIES, buttonInjuriesList);
  };
 
  
@@ -18,6 +17,7 @@ const mostrarData = () => {
     case "filterForYear":
       mostrarData();
       showInjuries();
+      activateButtonFunction();
       break;
    // case "filterForRisk":
  
@@ -28,13 +28,15 @@ const mostrarData = () => {
  const closeModal = () =>{
    document.getElementById("closeModal").style.display = "none";
    document.getElementById("Resultado").style.display = "none";
-   
  };
  document.getElementById("closeModal").addEventListener("click",closeModal);
 
- const activateButton = document.getElementsByName("button");
- //console.log(activateButton);
- const arrayButton = Array.from("activateButton");
- console.log(arrayButton);
+const activateButtonFunction = () =>{
+  let activateButton = document.getElementsByName("button");
+  let arrayButton = Array.from(activateButton);
+  arrayButton.forEach(function (element) {
+    element.addEventListener("click",window.data.mostrarNumeros);
+  });
+};
 
 
