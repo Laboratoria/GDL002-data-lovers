@@ -59,6 +59,7 @@ La interfaz en óptimas condiciones debe ofrecer acciones como filtrar, ordenar 
 ### Prototipo de baja fidelidad
 
 A través de el prototipado logramos sacar a flote las ideas generales al rededor del usuario (empleado de la aseguradora) y con cada iteración detallar y mejorar en base al feedback recibido.
+
 Versión 01
 ![Boceto01](https://drive.google.com/uc?export=view&id=1kkWCbGMYqk0viIE0S2gST_InlxRR2FWT)
 Versión 02
@@ -67,6 +68,16 @@ Versión 02.1
 ![Boceto03](https://drive.google.com/uc?export=view&id=12g7L_c5icmRt3qAVYrD2355OCNrwUIi_)
 Versión 03-Mobile
 ![Boceto04](https://drive.google.com/uc?export=view&id=1pS6rcjC2Hoe8nymy5b0Vn-As2EEh8Tc8)
+Versión 03.1-Mobile
+![Boceto05](https://drive.google.com/uc?export=view&id=1UXimO-oDUfNa1DarWbw5HjFVAaTNg_Zk)
+Versión 03-Web
+![Boceto06](https://drive.google.com/uc?export=view&id=1WK8h6XTJ3Q9KlQXQrgh-z-mCnBBSB_Ns)
+Versión 03.1-Web
+![Boceto07](https://drive.google.com/uc?export=view&id=1oXXqu-bQobsUpVQhIybmNXv7lIcv5RV9)
+Detalle-Web
+![Boceto08](https://drive.google.com/uc?export=view&id=1OvqPYWi7MtWUzmG9eyZHGhwKYNx1Ksn5)
+Versión 03.3-Web
+![Boceto09](https://drive.google.com/uc?export=view&id=1G0c4w28satEUo9ChMAvpgB8Nxy0-FRB9)
 
 ### Prototipo de alta fidelidad
 Pantalla 1
@@ -75,3 +86,13 @@ Pantalla 1.1
 ![Inicio02](https://drive.google.com/uc?export=view&id=1STdfTZSsLLh58Dt1Sp-1UpRQtlY_AzNI)
 Pantalla 2
 ![General01](https://drive.google.com/uc?export=view&id=1BH5GlHWinnJpOw0UeJgULcyfI1rKVIuf)
+Pantalla 2.1
+![General02](https://drive.google.com/uc?export=view&id=1__x90XI3oagSNgtzbWer1OhKzWkRiaf2)
+Pantalla 2.2
+![General03](https://drive.google.com/uc?export=view&id=1ocjYvLWGRQL1m86jIJIrajkB9YvGKUS7)
+Pantalla 2.3
+![General04](https://drive.google.com/uc?export=view&id=1VFbKnrGje3X1G-Z7LxvDvk2Y6qJfhpkt)
+Pantalla 2.4
+![General05](https://drive.google.com/uc?export=view&id=1C4f5_9BANdv6LXIqdKfR83icf3ylKnoX)
+Pantalla 2.5
+![General06](https://drive.google.com/uc?export=view&id=1Rc2KiUEKoGm4ldkhq1J1e9ZNeo3ulk2A)
