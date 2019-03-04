@@ -6,13 +6,15 @@ const mostrarData = () => {
  const showInjuriesFilter = () => {
     let buttonInjuriesList = document.getElementById("totalData");
     window.data.fillElements(INJURIES, buttonInjuriesList);
- }
+ };
  
  const showInjuriesOrder = () => {
   let buttonInjuriesList = document.getElementById("totalData");
   window.data.fillElementsOrder(INJURIES, buttonInjuriesList);
-}
- const filter = () =>{
+};
+ 
+
+const filter = () =>{
   document.getElementById("totalData").innerHTML = '';
    const values = document.getElementById("filterMenu").value;
    switch(values){
@@ -24,10 +26,11 @@ const mostrarData = () => {
    // case "filterForRisk":
  
    }
- };
- document.getElementById("filterMenu").addEventListener("change",filter);
+};
 
- const order = () =>{
+document.getElementById("filterMenu").addEventListener("change",filter);
+
+const order = () =>{
   document.getElementById("totalData").innerHTML = '';
    const values = document.getElementById("orderMenu").value;
    switch(values){
@@ -42,10 +45,11 @@ const mostrarData = () => {
       activateButtonFunction();
       break;
     case "default":
-     alert("No has elegido ninguno")
+     alert("No has elegido ninguno");
    }
- };
- document.getElementById("orderMenu").addEventListener("change",order);
+};
+
+document.getElementById("orderMenu").addEventListener("change",order);
 
  const closeModal = () =>{
    document.getElementById("closeModal").style.display = "none";
@@ -60,7 +64,3 @@ const activateButtonFunction = () =>{
     element.addEventListener("click",window.data.mostrarNumeros);
   });
 };
-
-
-
-

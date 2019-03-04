@@ -1,14 +1,4 @@
 window.data = {
- mostrarPalabra: () => {
-  let word;
-  for(let i = 0; i <= INJURIES.length; i++){
-    word = Object.keys(INJURIES[i]);
-    word.forEach(function (element) {
-    document.write(element);
-  });
- }
-  return word;
- },
  
  mostrarNumeros: () => {
   document.getElementById("Resultado").innerHTML = "";
@@ -61,5 +51,6 @@ fillElementsOrder: (injuriesList, buttonElement) => {
     buttonElement.insertAdjacentElement("beforeend", spanInjurie);
   }
    return arrayYear.push(year);
-}
-}
+},
+
+};
