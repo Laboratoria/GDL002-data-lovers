@@ -1,7 +1,7 @@
 require("../src/data/worldbank/worldbank.js");
 require('../src/data.js');
 
-
+ //AVERAGE
 describe('calcAvg', () => {
   it('is a function', () => {
     expect(typeof window.calcAvg).toBe('function');
@@ -15,6 +15,8 @@ describe('calcAvg', () => {
   });
 }); 
 
+
+//FILTER DATA
 describe('filterData ', () => {
   it('is a function', () => {
     expect(typeof window.filterData ).toBe('function');
@@ -23,3 +25,9 @@ describe('filterData ', () => {
     expect(window.filterData("PER", "Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)", "2002")).toBe(31.4799995422363);
   });
 });
+
+
+
+
+
+

@@ -50,7 +50,7 @@ const orderMax = () => {
   const arrayFinal = resultsArray.sort (function (a,b) {
     return b[1]  -a [1];
   });
-  let prettyResult = "<table id=\"tResults\">";
+  let prettyResult ="<table id=\"tResults\" class=\"tResults\">";
   prettyResult += "<tr><center><th>Año</th><th>Estadistica</th></tr>";
   arrayFinal.forEach(y2valPair => {
     prettyResult += "<tr><td>" + y2valPair[0] + "</td><td>" + y2valPair[1] + "</td></tr>";
@@ -75,7 +75,7 @@ const orderMin = () => {
   const arrayFinal = resultsArray.sort (function (a,b) {
     return a[1]  -b [1];
   });
-  let prettyResult = "<table id=\"tResults\">";
+  let prettyResult = "<table id=\"tResults\" class=\"tResults\">";
   prettyResult += "<tr><th>Año</th><th>Estadistica</th></tr>";
   arrayFinal.forEach(y2valPair => {
     prettyResult += "<tr><td>" + y2valPair[0] + "</td><td>" + y2valPair[1] + "</td></tr>";
