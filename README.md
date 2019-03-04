@@ -1,4 +1,3 @@
-
 # Explorador de datos sobre las mujeres
 
 GITHUB PAGES: [git hub pages link!](https://anafr.github.io/GDL002-data-lovers/src/index.html)
