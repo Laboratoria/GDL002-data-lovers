@@ -1,7 +1,7 @@
 
 # Explorador de datos sobre las mujeres
 
-GITHUB PAGES: [git hub pages link!](https://claudiagarfias.github.io/GDL002-data-lovers/index.html)
+GITHUB PAGES: [git hub pages link!](https://anafr.github.io/GDL002-data-lovers/src/index.html)
 
 LIVE SITE:[ 🧡live data lovers ana & clau ](https://claudiagarfias.works/laboratoria/datalovers/)
      

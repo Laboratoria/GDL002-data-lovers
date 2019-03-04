@@ -353,7 +353,7 @@ select.option {
 	/*! border-style: double; */
 }
 
-#resultOk, #year{
+#resultOk, #statResult{
 	/*! border-top: 1px #bbbbbbb3; */
 
 	margin: .15rem;
