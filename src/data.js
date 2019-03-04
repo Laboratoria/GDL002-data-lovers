@@ -22,12 +22,11 @@ const rangeFilterData = (country, indicatorNm, sinceYear, untilYear) => {
   const yearsData = [];
   for (let currentYear = sinceYear; currentYear <= untilYear; currentYear++){
     let statVal = filterData(country, indicatorNm, currentYear);
-    if (null == statVal) {
-      statVal = `"ND"`;
-    }
-    const myParragraph = `<p id= "statResult">` + currentYear + ` : ` + statVal + `</p>`;
+    if (null == statVal) statVal = `"ND"`;
+    else statVal = statVal.toFixed(1);
+    const myParagraph = `<p id= "statResult">` + currentYear + ` : ` + statVal + `</p>`;
 
-    yearsData [currentYear -sinceYear]= myParragraph;
+    yearsData [currentYear -sinceYear]= myParagraph;
  
   }
   return yearsData.join("");
