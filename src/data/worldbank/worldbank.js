@@ -36721,3 +36721,4 @@ var WORLDBANK = {
   }
 }
 ;;
+ window.WORLDBANK = WORLDBANK;

@@ -1,5 +1,3 @@
-const resultsObject = {};
-
 //FUNCIÓNES PARA FILTRAR DATA
 
 const filterData = (country,indicatorNm,year) =>{
@@ -9,7 +7,7 @@ const filterData = (country,indicatorNm,year) =>{
     const indicatorData= countryIndicators[i];
     if (indicatorData.indicatorName == indicatorNm ) {
      const statistic = indicatorData.data[year];
-     resultsObject[year] = statistic;
+     window.resultsObject[year] = statistic;
      if (statistic == "") {
          return null;
      }
@@ -45,9 +43,9 @@ const rangeFilterData = (country, indicatorNm, sinceYear, untilYear) => {
 const orderMax = () => {
   const resultsArray = [];
 
-  for (let year in resultsObject) {
-    console.log(typeof(resultsObject[year]));
-    resultsArray.push([year,resultsObject[year]]);
+  for (let year in window.resultsObject) {
+    console.log(typeof(window.resultsObject[year]));
+    resultsArray.push([year,window.resultsObject[year]]);
   }
 
   const arrayFinal = resultsArray.sort (function (a,b) {
@@ -70,9 +68,9 @@ const orderMax = () => {
 const orderMin = () => {
   const resultsArray = [];
 
-  for (let year in resultsObject) {
-    console.log(typeof(resultsObject[year]));
-    resultsArray.push([year,resultsObject[year]]);
+  for (let year in window.resultsObject) {
+    console.log(typeof(window.resultsObject[year]));
+    resultsArray.push([year,window.resultsObject[year]]);
   }
 
   const arrayFinal = resultsArray.sort (function (a,b) {
@@ -92,7 +90,7 @@ const orderMin = () => {
    
 //Funcion para calcular promedio de las estadisticas
 const calcAvg =() => {
-  const dataAvg = Object.values(resultsObject);
+  const dataAvg = Object.values(window.resultsObject);
   let dataFilter = dataAvg.filter(x => x != "");
   if (0 < dataFilter.length) {
     let avg =dataFilter.reduce(function(a, b){ return a + b; });
@@ -102,7 +100,7 @@ const calcAvg =() => {
 };
   
 
-//window.resultsObject = resultsObject;
+window.resultsObject = {};
 window.filterData = filterData;
 window.rangeFilterData = rangeFilterData;
 window.calcAvg = calcAvg;
