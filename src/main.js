@@ -8,11 +8,11 @@ const indicatorNameToIndicatorCode ={}; //objeto creado para almacenar los nombr
 // Función para cargar países
 const loadCountry = () => {//El parámetro es la funcion loadIndicator 
 
-    for (let i = 0; i < Object.keys(WORLDBANK).length; i++) {  // itera en las keys
-        const ctCode = Object.keys(WORLDBANK)[i]; //trae el indice de cada key
-        countryNameToCountryCode[WORLDBANK[ctCode].indicators[0].countryName] = ctCode; 
+    for (let i = 0; i < Object.keys(window.WORLDBANK).length; i++) {  // itera en las keys
+        const ctCode = Object.keys(window.WORLDBANK)[i]; //trae el indice de cada key
+        countryNameToCountryCode[window.WORLDBANK[ctCode].indicators[0].countryName] = ctCode; 
         //crea la propiedad Name y le da el valor del código en el objeto countryNameToCountryCode
-        ctSelector.options[i + 1] = new Option(WORLDBANK[ctCode].indicators[0].countryName, i + 1); 
+        ctSelector.options[i + 1] = new Option(window.WORLDBANK[ctCode].indicators[0].countryName, i + 1); 
         //empuja cada nombre del país a cada opción del selector "país"
     }
 };
@@ -22,7 +22,7 @@ const loadCountry = () => {//El parámetro es la funcion loadIndicator
 const loadIndicator = (countrySelectedByUser) => { 
     const countrySelected = ctSelector.options[countrySelectedByUser.target.value].innerHTML;
     //trae el valor de País seleccionado por el usuario del selector "país"
-    const countryIndicators = WORLDBANK[countryNameToCountryCode[countrySelected]].indicators; 
+    const countryIndicators = window.WORLDBANK[countryNameToCountryCode[countrySelected]].indicators; 
     //llama el valor seleccionado del objeto countryNameToCountryCode,cambia Perú por PER y trae sus indicadores
     for (let i =0; i < countryIndicators.length; i++) {//itera en los índices de los indicadores
 
