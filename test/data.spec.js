@@ -22,6 +22,6 @@ describe('injuries', () => {
 
 describe('fillElements', () => {
   it('must be a function', () => {
-    expect(data.fillElements()).toBe('function');
+    expect(data.fillElements(INJURIES)).toBe('function');
   });
 });
