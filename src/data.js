@@ -24,7 +24,7 @@ fillElements: (injuriesList, buttonElement) => {
        let buttonInjurie = document.createElement("button");
        buttonInjurie.value = year;
        spanInjurie.appendChild(buttonInjurie);
-       spanInjurie.innerHTML =`${year} <button name="button" value = "${injuriesList[i].Year}">i</button><br />`;
+       spanInjurie.innerHTML =` <button name="button" value = "${injuriesList[i].Year}">${year}</button>`;
        buttonElement.insertAdjacentElement("beforeend", spanInjurie);
      }
    }
@@ -47,7 +47,7 @@ fillElementsOrder: (injuriesList, buttonElement) => {
     let buttonInjurie = document.createElement("button");
     buttonInjurie.value = arrayYear[j];
     spanInjurie.appendChild(buttonInjurie);
-    spanInjurie.innerHTML =`${arrayYear[j]} <button name="button" value = "${injuriesList[j].Year}">i</button><br />`;
+    spanInjurie.innerHTML =` <button name="button" value = "${injuriesList[j].Year}">${arrayYear[j]}</button>`;
     buttonElement.insertAdjacentElement("beforeend", spanInjurie);
   }
    return arrayYear.push(year);
