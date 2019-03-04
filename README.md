@@ -37,8 +37,8 @@ solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
 iteraciones que realices y las subas a tu repositorio, y las menciones en tu
 `README.md`.
 
-![Data-Lovers](https://drive.google.com/file/d/1kkWCbGMYqk0viIE0S2gST_InlxRR2FWT/view?usp=sharing.png);
-![Data-Lovers](https://drive.google.com/file/d/12g7L_c5icmRt3qAVYrD2355OCNrwUIi_/view?usp=sharing.png);
+![Data-Lovers](https://drive.google.com/file/d/1kkWCbGMYqk0viIE0S2gST_InlxRR2FWT/view?usp=sharing);
+![Data-Lovers](https://drive.google.com/file/d/12g7L_c5icmRt3qAVYrD2355OCNrwUIi_/view?usp=sharing);
 
 Estos son datos que te proponemos:
 
