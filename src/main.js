@@ -1,11 +1,13 @@
 const mostrarData = () => {
   document.getElementById("infoBlock").style.display = "block";
  };
-  document.getElementById("Enter").addEventListener("click", mostrarData);
+
+ //document.getElementById("Enter").addEventListener("click", mostrarData);
  
  const showInjuriesFilter = () => {
     let buttonInjuriesList = document.getElementById("totalData");
     window.data.fillElements(INJURIES, buttonInjuriesList);
+    
  };
  
  const showInjuriesOrder = () => {
@@ -21,7 +23,7 @@ const filter = () =>{
     case "filterForYear":
       mostrarData();
       showInjuriesFilter();
-      activateButtonFunction();
+      activateButtonFunctionFilterOrder();
       break;
    // case "filterForRisk":
  
@@ -37,12 +39,12 @@ const order = () =>{
     case "lastToFirst":
       mostrarData();
       showInjuriesOrder(INJURIES);
-      activateButtonFunction();
+      activateButtonFunctionFilterOrder(INJURIES);
       break;
     case "FirstToLast":
       mostrarData();
       showInjuriesFilter();
-      activateButtonFunction();
+      activateButtonFunctionFilterOrder();
       break;
     case "default":
      alert("No has elegido ninguno");
@@ -51,16 +53,70 @@ const order = () =>{
 
 document.getElementById("orderMenu").addEventListener("change",order);
 
+const calculate = () =>{
+  document.getElementById("totalData").innerHTML = '';
+   const values = document.getElementById("calculusMenu").value;
+   switch(values){
+    case "YearWithFewerInjuries":
+      mostrarData();
+      showInjuriesFilter();
+      activateButton();
+      break;
+   // case "filterForRisk":
+ 
+   }
+};
+
+document.getElementById("calculusMenu").addEventListener("change",calculate);
+
  const closeModal = () =>{
    document.getElementById("closeModal").style.display = "none";
    document.getElementById("Resultado").style.display = "none";
  };
  document.getElementById("closeModal").addEventListener("click",closeModal);
 
-const activateButtonFunction = () =>{
+const activateButtonFunctionFilterOrder = (INJURIES) =>{
   let activateButton = document.getElementsByName("button");
   let arrayButton = Array.from(activateButton);
   arrayButton.forEach(function (element) {
-    element.addEventListener("click",window.data.mostrarNumeros);
+    element.addEventListener("click",()=>{
+      elementsOfDOM();
+      let showNumber = window.data.ShowNumbers(INJURIES);
+      console.log(showNumber);
+      
+      return showNumber.forEach((element)=>{
+        document.getElementById("Resultado").innerHTML += element + `<br />`;
+      });
+    });
   });
 };
+
+const elementsOfDOM = () =>{
+  document.getElementById("Resultado").innerHTML = "";
+  document.getElementById("closeModal").style.display = "block";
+  document.getElementById("Resultado").style.display = "block";
+};
+
+const activateButton = () =>{
+  let activateButton = document.getElementsByName("button");
+  let arrayButton = Array.from(activateButton);
+  arrayButton.forEach(function (element) {
+    element.addEventListener("click",()=>{
+      elementsOfDOM();
+      let showNumber = window.data.ShowNumbers(INJURIES);
+      return showNumber.forEach((element)=>{
+        document.getElementById("Resultado").innerHTML += element + `<br />`;
+      });
+    });
+  });
+};
+
+// const activateButtonFunctionToCalculate = () =>{
+//   let activateButton = document.getElementsByName("button");
+//   let arrayButton = Array.from(activateButton);
+//   arrayButton.forEach(function (element) {
+//     element.addEventListener("click",window.data.showNumbersOfCalculate);
+//   });
+// };
+
+//document.getElementById("Resultado").addEventListener("click",window.data.showNumbersOfCalculate())

@@ -12,6 +12,7 @@
 //});
 
 require('../src/data.js');
+
 const INJURIES = require('../src/data/injuries/injuries.json');
 
 describe('injuries', () => {
@@ -20,8 +21,8 @@ describe('injuries', () => {
   });
 });
 
-describe('fillElements', () => {
+describe('ShowNumbers', () => {
   it('must be a function', () => {
-    expect(data.fillElements(INJURIES)).toBe('function');
+    expect(window.data.ShowNumbers(INJURIES)).toBe('function');
   });
 });

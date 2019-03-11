@@ -1,15 +1,22 @@
 window.data = {
  
- mostrarNumeros: () => {
-  document.getElementById("Resultado").innerHTML = "";
-  document.getElementById("closeModal").style.display = "block";
-  document.getElementById("Resultado").style.display = "block";
+ShowNumbers: () => {
+  let wordAndValues = "";
+  let result = [];
   const valueButton = event.target.value;
   const years = INJURIES.filter(INJURIE => valueButton === INJURIE.Year);
   for(let i = 0; i<48; i++){
-    const result = Object.keys(years[0])[i] + ":" + Object.values(years[0])[i];
-    document.getElementById("Resultado").innerHTML += result + `<br />`;
+    let value = Object.values(years[0])[i];
+    let key = Object.keys(years[0])[i];
+    if(value === null){
+      value = 0;
+      wordAndValues = key + "     :     " + value;
+    }else{
+      wordAndValues = key + "     :     " + value;
+    }
+    result.push(wordAndValues);
   }
+  return result;
 },
  
  
@@ -52,5 +59,29 @@ fillElementsOrder: (injuriesList, buttonElement) => {
   }
    return arrayYear.push(year);
 },
+
+showNumbersOfCalculate: () => {
+  //elementsOfDOM();
+  let averache = [];
+  let result = 0;
+  const valueButton = event.target.value;
+  const years = INJURIES.filter(INJURIE => valueButton === INJURIE.Year);
+  for(let i = 0; i<48; i++){
+    let values =  Object.values(years[0])[i];
+    let value = Object.values(years[0])[i];
+    if(value === null){
+      value = 0;
+    }else{
+      averache.push(values);
+    }
+  }
+  averache.forEach(function(element){
+    result += element;
+  });
+  result = Math.round(result/48);
+  // console.log(result);
+  document.getElementById("Resultado").innerHTML += "El promedio de accidentes en el año " + valueButton + " es de " + result + `<br />`;
+  return result;
+}
 
 };
