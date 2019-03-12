@@ -111,22 +111,7 @@ const elementsOfDOM = () =>{
   document.getElementById("closeModal").style.display = "block";
   document.getElementById("Resultado").style.display = "block";
 };
-/*
-const activateButton = () =>{
-  let activateButton = document.getElementsByName("button");
-  let arrayButton = Array.from(activateButton);
-  arrayButton.forEach(function (element) {
-    element.addEventListener("click",(event)=>{
-  
-      const valueButton = event.target.value;
-      let showNumber = window.data.ShowNumbers(INJURIES, valueButton);
-      return showNumber.forEach((element)=>{
-        document.getElementById("Resultado").innerHTML += element + `<br />`;
-      });
-    });
-  });
-};
-*/
+
 const activateButtonFunctionToCalculate = () =>{
   let activateButton = document.getElementsByName("button");
   let arrayButton = Array.from(activateButton);
