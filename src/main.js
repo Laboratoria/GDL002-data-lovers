@@ -1,29 +1,46 @@
 const mostrarData = () => {
   document.getElementById("infoBlock").style.display = "block";
  };
-
- //document.getElementById("Enter").addEventListener("click", mostrarData);
+document.getElementById("Enter").addEventListener("click", mostrarData);
  
- const showInjuriesFilter = () => {
+ const showButtons = () => {
     let buttonInjuriesList = document.getElementById("totalData");
-    window.data.fillElements(INJURIES, buttonInjuriesList);
+    const arrayYearFilter = window.data.filterData(INJURIES);
+    for(let i=0; i<arrayYearFilter.length; i++){
+      let spanInjurie = document.createElement("span");  
+      spanInjurie.id = "Injurie" + [i];
+      let buttonInjurie = document.createElement("button");
+      buttonInjurie.value = arrayYearFilter[i];
+      spanInjurie.appendChild(buttonInjurie);
+      spanInjurie.innerHTML =` <button name="button" value = "${arrayYearFilter[i]}-01-04">${arrayYearFilter[i]}</button>`;
+      buttonInjuriesList.insertAdjacentElement("beforeend", spanInjurie);
+    }
     
  };
- 
- const showInjuriesOrder = () => {
-  let buttonInjuriesList = document.getElementById("totalData");
-  window.data.fillElementsOrder(INJURIES, buttonInjuriesList);
+
+ const activateButtonFunctionFilterOrder = (INJURIES) =>{
+  let activateButton = document.getElementsByName("button");
+  let arrayButton = Array.from(activateButton);
+  arrayButton.forEach(function (element) {
+    element.addEventListener("click",(event)=>{
+      elementsOfDOM();
+      const valueButton = event.target.value;
+      let showNumber = window.data.ShowNumbers(INJURIES, valueButton);
+      return showNumber.forEach((element)=>{
+        document.getElementById("Resultado").innerHTML += element + `<br />`;
+      });
+    });
+  });
 };
  
-
 const filter = () =>{
   document.getElementById("totalData").innerHTML = '';
    const values = document.getElementById("filterMenu").value;
    switch(values){
     case "filterForYear":
       mostrarData();
-      showInjuriesFilter();
-      activateButtonFunctionFilterOrder();
+      showButtons();
+      activateButtonFunctionFilterOrder(INJURIES);
       break;
    // case "filterForRisk":
  
@@ -32,19 +49,33 @@ const filter = () =>{
 
 document.getElementById("filterMenu").addEventListener("change",filter);
 
+ const showButtonsOrder = () => {
+  let buttonInjuriesList = document.getElementById("totalData");
+  const arrayYearFilter = window.data.fillElementsOrder(INJURIES, buttonInjuriesList);
+  for(let i=0; i<arrayYearFilter.length; i++){
+    let spanInjurie = document.createElement("span");  
+    spanInjurie.id = "Injurie" + [i];
+    let buttonInjurie = document.createElement("button");
+    buttonInjurie.value = arrayYearFilter[i];
+    spanInjurie.appendChild(buttonInjurie);
+    spanInjurie.innerHTML =` <button name="button" value = "${arrayYearFilter[i]}-01-04">${arrayYearFilter[i]}</button>`;
+    buttonInjuriesList.insertAdjacentElement("beforeend", spanInjurie);
+  }
+  activateButtonFunctionFilterOrder(INJURIES);
+};
+ 
 const order = () =>{
   document.getElementById("totalData").innerHTML = '';
    const values = document.getElementById("orderMenu").value;
    switch(values){
     case "lastToFirst":
       mostrarData();
-      showInjuriesOrder(INJURIES);
-      activateButtonFunctionFilterOrder(INJURIES);
+      showButtonsOrder(INJURIES);
       break;
     case "FirstToLast":
       mostrarData();
-      showInjuriesFilter();
-      activateButtonFunctionFilterOrder();
+      showButtons();
+      activateButtonFunctionFilterOrder(INJURIES);
       break;
     case "default":
      alert("No has elegido ninguno");
@@ -59,8 +90,8 @@ const calculate = () =>{
    switch(values){
     case "YearWithFewerInjuries":
       mostrarData();
-      showInjuriesFilter();
-      activateButton();
+      showButtons();
+      activateButtonFunctionToCalculate();
       break;
    // case "filterForRisk":
  
@@ -75,48 +106,36 @@ document.getElementById("calculusMenu").addEventListener("change",calculate);
  };
  document.getElementById("closeModal").addEventListener("click",closeModal);
 
-const activateButtonFunctionFilterOrder = (INJURIES) =>{
-  let activateButton = document.getElementsByName("button");
-  let arrayButton = Array.from(activateButton);
-  arrayButton.forEach(function (element) {
-    element.addEventListener("click",()=>{
-      elementsOfDOM();
-      let showNumber = window.data.ShowNumbers(INJURIES);
-      console.log(showNumber);
-      
-      return showNumber.forEach((element)=>{
-        document.getElementById("Resultado").innerHTML += element + `<br />`;
-      });
-    });
-  });
-};
-
 const elementsOfDOM = () =>{
   document.getElementById("Resultado").innerHTML = "";
   document.getElementById("closeModal").style.display = "block";
   document.getElementById("Resultado").style.display = "block";
 };
-
+/*
 const activateButton = () =>{
   let activateButton = document.getElementsByName("button");
   let arrayButton = Array.from(activateButton);
   arrayButton.forEach(function (element) {
-    element.addEventListener("click",()=>{
-      elementsOfDOM();
-      let showNumber = window.data.ShowNumbers(INJURIES);
+    element.addEventListener("click",(event)=>{
+  
+      const valueButton = event.target.value;
+      let showNumber = window.data.ShowNumbers(INJURIES, valueButton);
       return showNumber.forEach((element)=>{
         document.getElementById("Resultado").innerHTML += element + `<br />`;
       });
     });
   });
 };
-
-// const activateButtonFunctionToCalculate = () =>{
-//   let activateButton = document.getElementsByName("button");
-//   let arrayButton = Array.from(activateButton);
-//   arrayButton.forEach(function (element) {
-//     element.addEventListener("click",window.data.showNumbersOfCalculate);
-//   });
-// };
-
-//document.getElementById("Resultado").addEventListener("click",window.data.showNumbersOfCalculate())
+*/
+const activateButtonFunctionToCalculate = () =>{
+  let activateButton = document.getElementsByName("button");
+  let arrayButton = Array.from(activateButton);
+  arrayButton.forEach(function (element) {
+    element.addEventListener("click", (event)=>{
+      elementsOfDOM();
+      const valueButton = event.target.value;      
+      const averacheDate = window.data.showNumbersOfCalculate(INJURIES, valueButton);
+      document.getElementById("Resultado").innerHTML += "El promedio de accidentes en el año " + valueButton + " es de " + averacheDate + `<br />`;
+    });
+  });
+};
