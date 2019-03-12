@@ -1,4 +1,5 @@
 body {
+    /*text-align: center;*/
     display: grid;
     grid-template-columns: repeat(5 minmax(100px, 1fr));
     grid-gap: 0.5rem 1rem;
@@ -6,7 +7,7 @@ body {
     justify-content: flex-start;
     background: #ffffff;
     font-family: @import url ("http://drive.google.com/uc?export=view&id=13dbi5kPspxh1YA6NHAMFeBD6SCzLbUpN");
-  
+    
   }
   
   #infoBlock {
@@ -60,11 +61,15 @@ body {
     align-content: center;
     width: 135px;
     height: 41px;
-    /*background: #000677;*/
+    background: #1c27e6;
     border-radius: 6px;
   
   }
   
+  .opcions{
+    background: #00e7ad;
+  }
+
   .modal {
     /*display: none;  Hidden by default */
     position: fixed; /* Stay in place */

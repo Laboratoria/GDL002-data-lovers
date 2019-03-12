@@ -14,20 +14,25 @@
    </div>
 
    <section class="generalBlock" id="welcomeBlock"></section>
-   <script src="./data/injuries/injuries.js"></script>
+
 
     <button class="buttonGreen" id="Enter">Iniciar</button>
     <section class="generalBlock" id="infoBlock">
 
       <select class="optionalMenu" id="filterMenu">
         <option>Filtrar</option>
-        <option class="filterForYear" value="filterForYear">Por año</option>
+        <option class="opcions" value="filterForYear">Por año</option>
       </select>
 
       <select class="optionalMenu" id="orderMenu">
         <option>Ordenar</option>
-        <option value="lastToFirst">De mayor a menor</option>
-        <option value="FirstToLast">De menor a mayor</option>
+        <option class="opcions" value="lastToFirst">De mayor a menor</option>
+        <option class="opcions" value="FirstToLast">De menor a mayor</option>
+      </select>
+
+      <select class="optionalMenu" id="calculusMenu">
+        <option>Cálcular</option>
+        <option class="opcions" value="YearWithFewerInjuries">Promedio por año</option>
       </select>
 
       <div id="totalData">
@@ -39,9 +44,10 @@
     </section>
 
     <section class="generalBlock" id="compareBlock"></section>
+  <script src="./data/injuries/injuries.js"></script>
+  <script src="data.js"></script>
+  <script src="main.js"></script>  
 
-   <script src="data.js"></script>
-   <script src="main.js"></script>
   <div class="footer">
     <p class="text">© 2019 SEGURITAS S.A. de C.V., 42 Wallaby Way, Sidney, NSW | Seguritas es una aseguradora con Oportunidad de Empleo Equitativa y Seguro de vivienda justo.
 </p>
