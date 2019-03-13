@@ -1,120 +1,399 @@
-body {
-    /*text-align: center;*/
-    display: grid;
-    grid-template-columns: repeat(5 minmax(100px, 1fr));
-    grid-gap: 0.5rem 1rem;
-    grid-auto-rows: minmax(70px auto);
-    justify-content: flex-start;
-    background: #ffffff;
-    font-family: @import url ("http://drive.google.com/uc?export=view&id=13dbi5kPspxh1YA6NHAMFeBD6SCzLbUpN");
-    
-  }
-  
-  #infoBlock {
-    display: none;
-  }
-  
-  .buttonGreen {
-    width: 135px;
-    height: 41px;
-    /*font-family: myriad;*/
-    font-size: 14pt;
-    color: #ffffff;
-    text-align: center;
-    padding: 15px;
-    background: #01dd87;
-    border: none;
-    border-radius: 6px;
-    align-self: center;
-  }
-  
-  .image {
-    display: block;
-    z-index: 3;
-    width: 30%; /* you can use % */
-    height: auto;
-    margin: 10px auto;
-  
-  }
-  
-  .footer {
-    display: inline-block;
-    align-content: center;
-    margin: 5em auto auto auto;
-    font-family: sans-serif;
-    font-size: 0.6em;
-    color: #000677;
-  }
-  
-  /*.arrow-down {
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 18px 10px 0 10px;
-    border-color: #000000 transparent transparent transparent;
-    padding-bottom: 10px;
-    background: #ffffff;
-  }*/
-  
-  .optionalMenu {
-    display: inline-block;
-    align-content: center;
-    width: 135px;
-    height: 41px;
-    background: #1c27e6;
-    border-radius: 6px;
-  
-  }
-  
-  .opcions{
-    background: #00e7ad;
-  }
+@font-face {
+  font-family: 'Myriad Pro';
+  src: local('Myriad Pro'), local('Myriad Pro-Semibold'), url(https://drive.google.com/uc?export=view&id=1u6sFgemeZqEGiH0SdqWeVKdVjEAbAd-s) format('otf');
+  font-style: Semibold;
+  font-weight: Semibold;
+  unicode-range: U+0000–U+007F; /*Rango de caracteres unicode que la fuente contiene. Este varía, revisar: http://www.alanwood.net/unicode/fontsbyrange.html*/
+}
 
-  .modal {
-    /*display: none;  Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content */
-  #Resultado {
-    background-color: #eee;
-    margin: auto;
-    padding: 10px;
-    /*border: 1px solid #888;*/
-    border-radius: 10px;
-    width: 80%;
-    float: left;
-    justify-self: start;
-  }
-  
-  /* The Close Button */
-  .close {
-    display: none;
-    color: #aaaaaa;
-    float: left;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  button[name^="button"] {
-    color: #ffffff;
-    background: #02669d;
-    border: none;
-    border-radius: 0.2rem;
-  }
+* {
+font-family: 'myriad pro';
+align-content: center;
+box-sizing: border-box;
+}
+
+body {
+  /* background-image: url("https://cdn-3.expansion.mx/dims4/default/f2198a9/2147483647/strip/true/crop/362x217+0+0/resize/800x480!/quality/90/?url=https%3A%2F%2Fcherry-brightspot.s3.amazonaws.com%2Fmedia%2F2014%2F05%2F03%2Fbicicleta.jpg"); */
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  background: #ffffff; 
+}
+
+body::after{
+  content: "";
+  background: url(https://cdn-3.expansion.mx/dims4/default/f2198a9/2147483647/strip/true/crop/362x217+0+0/resize/800x480!/quality/90/?url=https%3A%2F%2Fcherry-brightspot.s3.amazonaws.com%2Fmedia%2F2014%2F05%2F03%2Fbicicleta.jpg);
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 35vw 35vw 10vw 1fr;
+  /*grid-gap: 0.5rem 1rem;*/
+  grid-template-rows: 4rem 2rem auto minmax(2rem, 1fr) 3rem;
+  grid-template-areas:
+  "header header header header header"
+  ". . . . ." /*Los puntos pueden usarse para generar divisiones que estarán vacías pero necesitan un espacio definido. Como un margen personalizado.*/
+  ". content content content ."
+  ". . . . ."
+  "footer footer footer footer footer";
+
+}
+
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: 1fr 70vw 10vw 1fr;
+  grid-template-rows: 4rem;
+  grid-template-areas: ". homeButton idButton ."; /*Puedes personalizar las subdivisiones de las áreas a trabajar*/
+
+}
+
+content {
+  grid-area: content;
+  display: grid;
+  grid-template-columns: 1fr 30vw 30vw 30vw 1fr;
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-areas:
+  ". registerBox registerBox registerBox ."
+  ". . passwordBox . ."
+  ". infoBlock infoBlock infoBlock ."
+  ". compareBlock compareBlock compareBlock .";
+}
+
+.generalBlock {
+    justify-self: center;
+}
+
+#welcomeBlock{
+  grid-area: registerBox;
+
+}
+#registerBox {
+  grid-area: registerBox;
+  display: grid;
+  grid-template-columns: 2rem auto 1rem auto 2rem;
+  grid-template-rows: 2rem auto 1rem 1.5rem 0.5rem 1.5rem 0.5rem 1.5rem 0.5rem auto 1rem 1.5rem 0.5rem 1.5rem 0.5rem 1.5rem 0.5rem 1.5em 2rem;
+  grid-template-areas:
+  ". . . . ."
+  ". enterSign enterSign enterSign ."
+  ". . . . ."
+  ". inputUser . passwordLink ."
+  ". . . . ."
+  ". inputPassword . enterButton ."
+  ". . . . ."
+  ". oSign oSign oSign ."
+  ". . . . ."
+  ". registerSign registerSign registerSign ."
+  ". . . . ."
+  ". inputUserR . . ."
+  ". . . . ."
+  ". inputEmail . . ."
+  ". . . . ."
+  ". inputId . . ."
+  ". . . . ."
+  ". inputPasswordR . registerButton ."
+  ". . . . .";
+}
+
+
+#infoBlock {
+  grid-area: infoBlock;
+  display: none;
+  grid-template-columns: 1fr auto 2rem auto 2rem auto 1fr;
+  grid-template-rows: 2rem 2rem auto 1rem 1rem auto auto;
+  grid-template-areas:
+  ". filterButton . sortButton . calculateButton ."
+  ". . . . . . ."
+  ". data data data data data ."
+  ". . closeButton . . . ."
+  ". . . . . . ."
+  ". modal modal modal modal . ."
+  ". . . . . compareButton .";
+
+}
+
+#compareBlock {
+  grid-area: compareBlock;
+  display: none;
+  grid-template-columns: 1fr auto 2rem auto 2rem auto 1fr;
+  grid-template-rows: 2rem 2rem auto 1rem auto 2rem;
+  grid-template-areas:
+  /* ". filterButton . sortButton . calculateButton ."
+  ". . . . . . ."
+  ". dataButton dataButton dataButton dataButton dataButton ."
+  ". . closeButton . . . ."
+  ". . modal modal modal . ."
+  ". . . . . compareButton ."; */
+}
+
+footer {
+grid-area: footer;
+display: grid;
+grid-template-columns: 1fr auto auto auto auto 1fr;
+grid-template-rows: 3rem;
+grid-template-areas: ". footText logo1 logo2 logo3 .";
+font-family: sans-serif;
+font-size: 0.8rem;
+color: #000677;
+}
+
+.homeButton {
+grid-area: homeButton;
+max-height: 4rem;
+width: auto;
+/* justify-self: center; */
+}
+
+.idButton {
+  grid-area: idButton;
+  display: none;
+  width: 100%;
+  max-height: 4rem;
+  color: #02669d;
+  font-size: 1.5rem;
+  background: #ffffff;
+  border-top: #ffffff;
+  border-right: #ffffff;
+  border-bottom: #038fdd;
+  border-left: #038fdd;
+  border-style: solid;
+}
+
+
+#enterSign {
+grid-area: enterSign;
+justify-self: center;
+}
+
+#inputUser {
+grid-area: inputUser;
+}
+
+#inputPassword {
+grid-area: inputPassword;
+}
+
+#enterButton {
+grid-area: enterButton;
+}
+
+#o {
+grid-area: oSign;
+justify-self: center;
+}
+
+#registerSign {
+grid-area: registerSign;
+justify-self: center;
+}
+
+#inputUserR {
+grid-area: inputUserR;
+}
+
+#inputEmail {
+grid-area: inputEmail;
+}
+
+#inputId {
+grid-area: inputId;
+}
+
+#inputPasswordR {
+grid-area: inputPasswordR;
+}
+
+#registerButton {
+grid-area: registerButton;
+}
+
+.blueBox {
+  background: #038fdd;
+  border: none;
+  border-radius: .5rem;
+}
+
+.input {
+  width: 14rem;
+  border: none;
+  border-radius: .2rem;
+}
+
+.buttonGreen {
+  width: 8rem;
+  height: 2rem;
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-align: center;
+  justify-self: center;
+  padding: 15px;
+  background: #01dd87;
+  border: none;
+  border-radius: 6px;
+  align-self: center;
+}
+
+.welcomeTitle {
+  font-size: 1.5rem;
+  color: #000677;
+}
+
+.whiteText {
+  color: #ffffff;
+}
+
+/* .image {
+  display: block;
+  z-index: 3; /*No lo entiendo .-. (investigar)* /
+  width: 30%; /* Puedes usar px o % * /
+  height: auto;
+  margin: 10px auto;
+} */
+
+
+.optionalMenu {
+  display: inline-block;
+  align-self: center;
+  width: 135px;
+  height: 41px;
+  /* background: #000677; /*No sirve :C ¿por qué? */
+  border-radius: 6px;
+      -webkit-appearance: menulist;
+      box-sizing: border-box;
+      align-items: center;
+      white-space: pre;
+      -webkit-rtl-ordering: logical;
+      color: #038fdd;
+      background-color: white;
+      cursor: default;
+      border-width: 1px;
+      border-style: solid;
+      border-color: inherit;
+      border-image: inherit;
+}
+
+#filterMenu {
+  grid-area: filterButton;
+}
+
+#sortMenu {
+  grid-area: sortButton;
+}
+
+#calculusMenu {
+  grid-area: calculateButton;
+}
+
+#totalData {
+  grid-area: data;
+  display: grid;
+  grid-template-columns: 1fr auto 2rem auto 2rem auto 1fr;
+  grid-template-rows: 2rem auto auto auto auto auto 2rem;
+  grid-template-areas:
+  ". . . . . . ."
+  ". dataSpan . dataSpan . dataSpan ."
+  ". dataSpan . dataSpan . dataSpan ."
+  ". dataSpan . dataSpan . dataSpan ."
+  ". dataSpan . dataSpan . dataSpan ."
+  ". dataSpan . dataSpan . dataSpan ."
+  ". . . . . . .";
+
+}
+
+.modal {
+  grid-area: modal;
+  /*display: none;  Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Contenido del modal */
+#Result {
+  grid-area: dataSpan;
+  background-color: #eee;
+  margin: auto;
+  padding: 2rem;
+  /*border: 1px solid #888;/*¿Cuántos atributos puede tener una sola línea a la vez? * / */
+  border-radius: 1rem;
+  width: 100%;
+  float: left;
+  justify-self: start;
+}
+
+/* The Close Button 'x' */
+.close {
+  grid-area: closeButton;
+  display: none; /*Que no aparezca hasta que es llamado*/
+  color: #aaaaaa; /*gris claro*/
+  /* float: left; /*Posición de elemento flotante (nota: revisar si en verdad está activa)*/
+  font-size: 1.5rem; /*Tamaño de la 'x'*/
+  font-weight: bold; /*Peso o grosor de la 'x'*/
+  border: none;
+  border-radius: .2rem;
+}
+
+/* Para cambiar el color del botón al pasar el cursor */
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Botones dinámicos */
+button[name^="button"] {
+  /* grid-area: dataButton; */
+  color: #ffffff; /*Color del texto*/
+  background: #02669d; /*Color del botón*/
+  border: none; /*Borde o contorno: ninguno*/
+  border-radius: 0.2rem; /*Redondez de esquina (porque la esquina es parte del borde)*/
+}
+
+#compareButton {
+  grid-area: compareButton;
+}
+
+.footText {
+grid-area: footText;
+max-height: 3rem;
+/* width: 75vw; */
+align-self: center;
+/* justify-content: center; */
+}
+
+.logo {
+max-height: 3rem;
+width: auto;
+}
+
+#logo1 {
+grid-area: logo1;
+}
+
+#logo2 {
+grid-area: logo2;
+}
+
+#logo3 {
+grid-area: logo3;
+}

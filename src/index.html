@@ -7,16 +7,30 @@
    <link rel="stylesheet" href="style.css" />
  </head>
  <body>
-   <img class="image" alt="Seguritas_logo.png" src="http://drive.google.com/uc?export=view&id=15n22pSMafRcXVJs0mV2OAROeHHdxABLW">
-   <div class="horizontalLine">
-   </div>
-   <div class="verticalLine">
-   </div>
+   <main>
+      <header>
+        <img class="homeButton" alt="Seguritas_logo.png"
+        src="http://drive.google.com/uc?export=view&id=15n22pSMafRcXVJs0mV2OAROeHHdxABLW">
+        <button class="idButton" id="idButton">id usuario</button>
+      </header>
+  <content>
+      <section class="generalBlock" id="welcomeBlock">
+          <box class="blueBox" id="registerBox">
+            <h1 class="welcomeTitle" id="enterSign">Log In</h1>
+            <input class="input" id="inputUser" placeholder=" #Id" type="search">
+            <input class="input" id="inputPassword" placeholder=" Password" type="password">
+            <button class="buttonGreen" id="enterButton">Submit</button>
+            <p class="whiteText" id="o">--------------------- o ---------------------</p>
+            <h1 class="welcomeTitle" id="registerSign">Sign In</h1>
+            <input class="input" id="inputUserR" placeholder=" User" type="search">
+            <input class="input" id="inputEmail" placeholder=" email@ejemplo.com" type="email">
+            <input class="input" id="inputId" placeholder=" #id" type="search">
+            <input class="input" id="inputPasswordR" placeholder=" Password" type="password">
+            <button class="buttonGreen" id="registerButton">Submit</button>
+          </box>
+         </section>
+    <section id=""></section>
 
-   <section class="generalBlock" id="welcomeBlock"></section>
-
-
-    <button class="buttonGreen" id="Enter">Iniciar</button>
     <section class="generalBlock" id="infoBlock">
 
       <select class="optionalMenu" id="filterMenu">
@@ -26,8 +40,8 @@
 
       <select class="optionalMenu" id="orderMenu">
         <option>Ordenar</option>
-        <option class="opcions" value="lastToFirst">De mayor a menor</option>
-        <option class="opcions" value="FirstToLast">De menor a mayor</option>
+        <option class="opcions" value="lastToFirst">De 2016 a 2000</option>
+        <option class="opcions" value="FirstToLast">De 2000 a 2016</option>
       </select>
 
       <select class="optionalMenu" id="calculusMenu">
@@ -42,12 +56,12 @@
         <button class="close" id="closeModal">X</button>
       </div>
     </section>
-
+  </content>
     <section class="generalBlock" id="compareBlock"></section>
   <script src="./data/injuries/injuries.js"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>  
-
+<footer>
   <div class="footer">
     <p class="text">© 2019 SEGURITAS S.A. de C.V., 42 Wallaby Way, Sidney, NSW | Seguritas es una aseguradora con Oportunidad de Empleo Equitativa y Seguro de vivienda justo.
 </p>
@@ -55,5 +69,7 @@
 <img alt="BBB_logo.png" src="http://drive.google.com/uc?export=view&id=13bPDABnn7go_LCr8BZcWulkIkrCpta5c">
 <img alt="Insuricare_logo.png" src="http://drive.google.com/uc?export=view&id=1jme43ZLrx5miSbm-2n5oxe0owxhqpnlo">
   </div>
+</footer>
+</main>
 </body>
 </html>

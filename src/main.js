@@ -1,7 +1,10 @@
 const mostrarData = () => {
   document.getElementById("infoBlock").style.display = "block";
+  document.getElementById("welcomeBlock").style.display = "none";
+  document.getElementById("idButton").style.display = "block";
  };
-document.getElementById("Enter").addEventListener("click", mostrarData);
+document.getElementById("enterButton").addEventListener("click", mostrarData);
+document.getElementById("registerButton").addEventListener("click", mostrarData);
  
  const showButtons = () => {
     let buttonInjuriesList = document.getElementById("totalData");
