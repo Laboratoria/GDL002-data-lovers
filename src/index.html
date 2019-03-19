@@ -1,18 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <!-- <script src="./data/injuries/injuries.js"></script> -->
-    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-    <!-- <script src="./data/steam/steam.js"></script> -->
-    <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-    <!-- <script src="./data/lol/lol.js"></script> -->
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0">
+  <title>Pokédex Go!</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <div id="root"></div>
+  <header>
+    <div class="navigationBar">
+      <div style="font-size:30px;cursor:pointer" class="homeBtnDiv">
+        <img src="images/home-blue-btn.gif" alt="Home button" class= "homeBtn">
+        <label for="homeBtn" class="homeBtnTitle">HOME</label>
+      </div>
+      <!-- <span style="font-size:30px;cursor:pointer" class="openbtn" id="openBtn"></span> -->
+      <div class="searchBar">
+        <!-- <input type="text" placeholder=" # o Número" class="searchInput" id="searchBar"> -->
+        <!-- <input type="button" value="Buscar" class="searchBtn" id="searchButton"> -->
+        <!-- <i class="material-icons md-20 searchBtn" id="searchButton">search</i> -->
+      </div>
+    </div>
+  </header>
+
+  <div class="home">
+    <div class="home_title">
+      <img src="images/pokedex-go-medium.png" alt="Pokedex Go" class="homeTitleImg">
+    </div>
+    <div class="home_medals">
+      <img src="images/medals/medal-pokemon.png" alt="Pokemon" class="medals" id="pokemonMedal">
+      <img src="images/medals/medal-list.png" alt="Listas" class="medals" id="listMedal">
+      <img src="images/medals/medal-charts.png" alt="Estadísticas" class="medals" id="statsMedal">
+      <img src="images/medals/medal-game.png" alt="Juego" class="medals" id="gameMedal">
+      <img src="images/medals/medal-about.png" alt="Acerca de" class="medals" id="aboutMedal">
+      <img src="images/medals/medal-6.png" alt="Próximamente" class="medals">
+      <img src="images/medals/medal-7.png" alt="Próximamente" class="medals">
+      <img src="images/medals/medal-8.png" alt="Próximamente" class="medals">
+    </div>
+  </div>
+  
+  <footer class="footer"> Creado por Mel y Share :)</footer>
+
+  <script src="./data/pokemon/pokemon.js"></script>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+
 </html>
