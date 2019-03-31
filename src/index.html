@@ -2,16 +2,93 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" maximum-scale="1">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+
+    <!--header-->
+    <section class="header">
+        <a href="#default" class="logo"></a> <button id="homeBtn" class="btn"><i class="fa fa-home"></i></button>
+        <div id="homeImage" class="header-left">
+          <a href="https://fontmeme.com/es/fuente-pokemon/"><img src="https://fontmeme.com/permalink/190302/e1f128fcdafa1dbdbfe1d8238c88eff6.png" alt="fuente-pokemon" border="0"></a>
+        </div>
+      </section>
+
+
+  <!-- Pantalla de inicio-->
+  <section id="home">
+      <img id="homeImg" src="https://es.testsworld.net/files/2015/10/test-personalidad-pokemon.jpg">
+      <p>¡Bienvenidos a PokeHack! <br> Aquí sabrás si tu pokemón favorito podrá ganar sus batallas ante su oponente. <br>
+         Y en Pokedex encontrarás los 151 pokemones pertenecientes a la región Kanto. <br> ¡Atrevete a probarlo! </p>
+
+    <div>
+      <button id="compareBtn">Comparar</button>
+      <button id="pokedexBtn">Pokedex</button>
+    </div>
+
+  </section>
+
+  <!--Pantalla "Comparar" que muestra TIPOS y DEBILIDADES de cada pokemon seleccionado.-->
+  <div id="compareScreen" class="dropdown" style = "display: none">
+      <p>Elige a tu pokemon y a un contrincante.</p>
+        <!--"1er SELECTOR" donde el usuario elige un pokemon y al elegirlo, se despliega la imagen de dicho pokemon-->
+            <select name = "listPokemon" id = "selectPokemon" class="pokeNames"></select>
+
+            <!-- "2do SELECTOR"  para escoger el pokemon oponente -->
+            <select name  ="nameOpponent" id = "selectOpponent" class="pokeNames"></select>
+              
+              <!-- aquí se guarda el tipo y debilidades del pokemon -->
+              <div id="featuresPokemon" class = "algo">
+                
+              </div>
+  
+                <!--aqui se guarda el tipo y debilidades de pokemon oponente -->
+                <div id="featuresOpponent" class="algo"></div>
+                <p>¡Averigua cuantos candies necesita tu Pokemon para evolucionar y ser el posible vencedor!</p>
+
+                <form id="candiesResults">¿Cuántos candies tienes?:
+                  <input type="number" id ="candies" required>
+                  <p id="results"></p>
+                </form>
+                <button id= "exit">Salir</button>
+  </div>
+
+        <!--Pantalla si elige Pokedex-->
+    <section id="pokedexScreen" hidden>
+      <p>Conoce las características de cada Pokemon.</p>      
+<!--Botón para ordenar nombres alfabeticamente -->
+      <div class="buttons">
+        <button id="orderName">Nombres de A-Z</button><br><br>
+        <button id= "exitBtn">Salir</button>
+        
+          <div id="allList">
+            
+          </div>
+          
+      </div>
+    </section>
+
+  <!--pantalla salida -->
+  <div id="exitScreen" style = "display: none">
+        <p>Gracias por usar Poke  Hack, te esperamos pronto!!</p>
+        <img id="exitImg" src="https://estaticos.muyinteresante.es/media/cache/1140x_thumb/uploads/images/gallery/5b0fcfa25bafe83df2c203b3/pokemon0_0.jpg">
+  </div>
+
+
+  <!--pantalla salida -->
+  <div id="exitScreen" style = "display: none">
+
+        <p>Gracias por usar Pokemon Hack, te esperamos pronto!!</p>
+        <img id="exitImg" src="https://estaticos.muyinteresante.es/media/cache/1140x_thumb/uploads/images/gallery/5b0fcfa25bafe83df2c203b3/pokemon0_0.jpg">
+
+  </div>
   </head>
   <body>
     <div id="root"></div>
-    <!-- <script src="./data/injuries/injuries.js"></script> -->
-    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-    <!-- <script src="./data/steam/steam.js"></script> -->
-    <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-    <!-- <script src="./data/lol/lol.js"></script> -->
+    <script src="./data/pokemon/pokemon.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>
   </body>
