@@ -1,0 +1,218 @@
+
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
+
+
+body{
+  margin: 0;
+  align-items: center;
+  align-content: center;
+  background-image: url("http://cdn.eso.org/images/screen/eso1213a.jpg");
+  color:white;
+  font-family: 'Quicksand', sans-serif;
+  background-attachment: fixed;
+  text-align: center;
+  font-size: 1.5vw;
+  
+}
+
+.Intro{
+  padding: 5%;
+}
+
+#lolvers {
+  width: 500px;
+}
+
+/* Style the header with a grey background and some padding */
+.header {
+  overflow: hidden;
+  color: white;
+  background-image: url(https://i.postimg.cc/sDB4cxyP/header-LOL.png);
+  background-color: #f1f1f1;
+  padding: 80px 90px;
+}
+
+
+/* Style the header links */
+.header a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
+
+#content {
+  list-style: none;
+  margin: auto;
+  
+}
+
+/*.ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}*/
+
+#attack, #defense, #magic, #difficulty{
+  border: 1px solid #ddd;
+  border-width: 1px;
+  border-radius: 15%;
+  padding: 5px;
+  margin: 5px;
+  width: 85px;
+  height: 85px;
+  font-size: 80%;
+}
+
+#attack:hover, #defense:hover,#magic:hover, #difficulty:hover {
+  width: 100px;
+  height: 100px;
+  top: 0%;
+  font-size: 100%;
+}
+
+
+.roleBtn {
+  border: 1px solid #ddd;
+  border-width: 1px;
+  border-radius: 15%;
+  padding: 8px;
+  margin: 5px;
+  width: 85px;
+  height: 85px;
+  font-size: 80%;
+
+}
+.roleBtn:hover{
+  width: 100px;
+  height: 100px;
+  top: 0%;
+  font-size: 100%;
+}
+
+.championBox {
+  list-style: none;
+  color: white;
+  max-width: 50%;
+  padding: 20px;
+  margin: 10px;
+  background-color: #21262d; 
+  border-radius: 5%;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);  
+  display: inline-block;
+  text-align:center;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #ddd;
+  align-self: flex-end;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.championBox #text-footer {
+  width: 100%;
+	height: 100%;
+	top: 100%;
+	left: 0;
+	transition: top .5s ease;
+}
+
+.wrap-text {
+  padding: 15px;
+  display: block;
+  position: absolute;
+  z-index: 1;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.wrap-text p {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 400;
+  font-size: 20px;
+  font-weight: 100;
+  text-align: center;
+  margin-top: 0;
+  color:black;
+}
+.championBox:hover #text-footer {
+  top: 0%;
+  background-color:white;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  
+}
+
+button {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 20px;
+  color:white;
+  vertical-align: middle;
+  background-color: #21262d;
+  border-radius: 5%;
+  line-height: 1.5;
+  
+}
+input[type=text] {
+  background-color:#21262d;
+  width: 300px;
+  height: 55px;
+  font-size: 20pt;
+  text-align: center;
+  color: white;
+  font-family: 'Libre Baskerville', serif;
+}
+footer{
+	background-color: #000;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  align-content: center;
+}
+
+#chart_div{
+  width: 60%;
+  margin: 0 auto;
+
+}
+
+
+.linksLOL{
+ color: yellow;
+}
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color:gray; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: rgb(238, 215, 11); /* Add a dark-grey background on hover */
+}

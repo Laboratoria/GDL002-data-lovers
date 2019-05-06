@@ -1,18 +1,175 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <!-- <script src="./data/injuries/injuries.js"></script> -->
-    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-    <!-- <script src="./data/steam/steam.js"></script> -->
-    <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-    <!-- <script src="./data/lol/lol.js"></script> -->
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-  </body>
+<html lang="es" dir="ltr" data-cast-api-enabled="true">
+<head>
+   <meta name="viewport" charset="utf-8">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+   <link href="https://postimg.cc/gallery/22apnbyk0/">
+   <title>+LOLvers</title>
+   <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+   <div class="header">
+      <a href="#default" class="logo"></a>
+      <img id="lolvers" src="https://i.postimg.cc/hjjSdHxj/TITULO.png" >
+      <div class="header-right">
+         <button id="HOME">WELCOME</button>
+         <button id="CHAMPIONS">CHAMPIONS</button>
+         <button id="MOREINFO">+INFO</button>
+      </div>
+   </div>
+   <!-- PANTALLA INICIO-->
+   <section id="WELCOME">
+      <h1>"WELCOME"</h1>
+      <p class="Intro"> This website was created for new users, who want to level up LOL easily. 
+         <br>When you go to the CHAMPIONS section, you could see all of the champions and 
+         <br>if you roll over to one of those you can find important info about them,  
+         <br>for instance the attack level, defense, magic or difficulty, a champion has. 
+         <br> You can filter by name if you want to know more about the champion's stats.  
+      </p>
+      <article id="videoLol">
+      <iframe id="playVideo" width="800" height="600" src="https://www.youtube.com/embed/BGtROJeMPeE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>            
+      </article>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+   </section>
+   <!-- PANTALLA CAMPEONES-->
+   <section id="CHAMPS" style="display:none">
+      <h2>"CHAMPIONS"</h2>
+      <!--
+         <label id="RoleGame">ROLE:</label>
+          <select id= "role">
+             <option value="1">Assassin</option>
+             <option value="2">Fighter</option>
+             <option value="3">Mage</option>
+             <option value="4">Marksman</option>
+             <option value="5">Support</option>
+             <option value="6">Tank</option>
+             <option value="7">Malee</option>
+          </select>-->
+      <label for="champName"></label>
+      <input type="text" placeholder="Champion's Name" name="champName" id="nameChamp" required/>
+      <br>
+      <br>
+      <button type="submit" name="button" id="searchBtn">SEARCH</button>
+      <button id = "showAll">ALL CHAMPIONS</button>
+      <div id="champBox"></div>
+      <nav class = "infoChampBtn">
+         <p> To see in descending order, click on!</p>
+         <button id= "attack" class="fas fa-haykal"> <br>attack</button>
+         <button id= "defense" class="fas fa-hand-paper"> <br>defense</button>
+         <button id= "magic" class="fas fa-hat-wizard"> <br>magic</button>
+         <button id= "difficulty" class="fas fa-icicles"> <br>difficulty</button>
+      </nav>
+      <br>
+      <p> To filter by role, click on!</p>
+      <nav >
+         <img class= "roleBtn" alt="assassin" id="assassin" src="https://i.postimg.cc/LhcmSPnt/Assassin.png">  
+         <img class= "roleBtn" alt="fighter" id="fighter" src="https://i.postimg.cc/QK1GC6Hp/fighter.png">
+         <img class= "roleBtn" alt="mage" id="mage" src="https://i.postimg.cc/2bPNzp8k/Mage.png">
+         <img class= "roleBtn" alt="marksman" id="marksman" src="https://i.postimg.cc/Q9BrGNDY/marksman.png">
+         <img class= "roleBtn" alt="support" id="support" src="https://i.postimg.cc/94gjnR6q/support.png">
+         <img class= "roleBtn" alt="tank" id="tank" src="https://i.postimg.cc/p9LHCY6H/tank.png">
+      </nav>
+      <p>ASSASSIN  ||   FIGHTER   ||   MAGE  ||  MARKSMAN   ||  SUPPORT   ||  TANK</p>
+      <div id = "contentIdChamps">
+      </div>
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+      <br>
+      <br>
+      <br>
+      <br>
+      
+   </section>
+   <!-- PANTALLA COMUNIDAD-->
+   <section id="moreInfo" style= "display:none">
+      <h2>"+INFO"</h2>
+      <p>Do you want to know how many CHAMPIONS are 
+         in accordance of their role: 
+      </p>
+      <aside id="chartChamps">
+         <figure id = "tags"></figure>
+         <figure id="chart_div"></figure>
+      </aside>
+     
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script type="text/javascript">
+  
+        // Load the Visualization API and the corechart package.
+        google.charts.load('current', {'packages':['corechart']});
+  
+        // Set a callback to run when the Google Visualization API is loaded.
+        google.charts.setOnLoadCallback(drawChart);
+  
+        // Callback that creates and populates a data table,
+        // instantiates the pie chart, passes in the data and
+        // draws it.
+        function drawChart() {
+  
+          // Create the data table.
+          var data = new google.visualization.DataTable();
+          data.addColumn('string', 'Role');
+          data.addColumn('number', 'Champions');
+          data.addRows([
+            ['Fighter', 66],
+            ['Tank', 40],
+            ['Mage', 52],
+            ['Assassin', 33],
+            ['Support', 27],
+            ['Marksman', 24],
+            ['Melee',1]
+          ]);
+  
+          // Set chart options
+          var options = {'title':"CHAMPION'S ROLE",
+                         'backgroundColor':'transparent',
+                         'legend':{position: 'left', textStyle: {color: 'white', fontSize: 16}},
+                         'is3D':true,
+                         'width':800,
+                         'height':600};
+  
+          // Instantiate and draw our chart, passing in some options.
+          var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+          chart.draw(data, options);
+        }
+      </script>
+      
+   
+      <!--
+         <h1>COMMENTS</h1>
+         <textarea rows="4" cols="50">
+         </textarea>
+         <br>
+         <button id="submit">"SUBMIT"</button>
+         -->
+      <h1>LINKS LEAGUE</h1>
+      
+         <a href = "https://lan.leagueoflegends.com/es/" class="linksLOL" alt="paginaOficial"> LoL Official Site || </a>
+      
+      
+         <a href = "https://lan.leagueoflegends.com/es/" class="linksLOL" alt="guiasdLol"> LoL Guides || </a>
+      
+     
+         <a href = "https://champion.gg/statistics/#?sortBy=general.experience&order=ascend&roleSort=" class = "linksLOL" alt="tabla"> Mas Guias LoL </a>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+   </section>
+   <footer class = "pie-pagina" >
+      <p>We hope this information will be useful for you.
+         <br> 
+      </p>
+   </footer>
+   <div id="root"></div>
+   <script src="./data/lol/lol.js"></script> 
+   <script src="data.js"></script>
+   <script src="main.js"></script>
+</body>
 </html>
