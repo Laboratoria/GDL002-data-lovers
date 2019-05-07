@@ -1,0 +1,571 @@
+/*BOX-SIZING MODEL TO BORDER*/
+*, *:before, *:after {
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box; 
+	box-sizing: border-box;
+	text-align: center;
+	font-family: 'Hind', sans-serif;
+}
+
+body{
+	margin: 0;
+}
+
+header {
+	color: #ffff;
+  	padding: 1rem auto .5rem auto;
+  	width: 100%;
+  	background-color: #242424;
+	height: 5rem;
+}
+nav{
+	padding: 0 .65rem;
+}
+
+.flex-column { 
+	display: flex;
+	flex-direction: column;
+}
+
+.flex-row{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content:space-between;
+}
+
+
+.flex-row-center{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content:center;
+}
+
+.flex-row-center img{
+	max-width: 180px;
+	margin:1.25rem;
+}
+
+.flex-row-top {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.flex-select {
+	margin:0 1rem;
+	border: 1px solid #ecc1fb;
+	padding: 0 3rem 2rem 3rem;
+	max-width: 600px;
+	align-self: center;
+	align-items: center;
+}
+
+.flex-select-single {
+	border: 1px solid #ecc1fb;
+	padding: 0 3rem 2rem 3rem;
+	max-width: 535px;
+	margin: 1rem auto 0;
+	align-self: center;
+	align-items: center;
+}
+
+li {
+	font-size: 1.15rem;
+	padding: .25rem 1rem;
+	border-right: 1px solid #cd7ce7;
+	list-style-type: none;
+}
+
+li a{
+	color:#ffff;
+}
+
+.search-bar {
+	max-width: 140px;
+	margin-right: 3rem;
+	height: 2.05rem;
+	-webkit-appearance: none;
+	border: 1px solid #cd7ce7;
+	border-radius: 2px;
+	background-image: url(assets/search-icon.png);
+	background-position: right;
+	background-repeat:no-repeat;
+	display: inline;
+	text-align: right;
+	margin-left: .25rem;
+	padding: 1rem;
+	background-color: #78009f29;
+}
+
+.parallax {
+  /* The image used */
+  background-image: url('assets/girl-background.jpg');
+  /* Set a specific height */
+  min-height: 600px; 
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax-credits {
+  /* The image used */
+  background-image: url('assets/mujer-latinoamericana-sombrero-vendedora.jpg');
+  /* Set a specific height */
+  min-height: 400px; 
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#description-container{
+	padding: 3.5rem 12rem 5.5rem 12rem;
+	height: auto;
+}
+
+#description-container p{
+	padding: .5rem 8rem .35rem 8rem;
+}
+
+#logo-banco-mundial {
+	margin: 0.5rem 0 0 3rem;
+	max-width: 250px !important;
+}
+
+#reload-from-logo{
+	cursor: pointer;
+}
+
+
+#choose-data-inner {
+  	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+  	padding: 1rem 3rem;
+	background-color: #f5f5f5;
+	margin: 0;
+}
+
+.credits {
+	padding: 7rem 1rem 3rem 1rem;
+}
+
+.credits p {
+	font-size: 1.35rem;
+	color: #626262;
+
+}
+
+.credits-logos{
+	height: 100%
+	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+	height: 8rem;
+	font-weight: 200;
+	margin-bottom: 3rem;
+}
+
+section label{
+	display: block; 
+	margin: 2rem auto .5rem auto;
+}
+
+.label-title {
+}
+
+section option {
+	max-width: 600px;
+}
+
+
+.years-select {
+align-self: center;
+margin: 0 1rem;	
+}
+
+
+h1 {
+	margin: 0rem auto 6rem auto;
+	font-size: 2.35rem;
+	font-weight: 600;
+	font-weight: 200;
+	text-transform: uppercase;
+	color: #ffff;
+	background-color: #20131eb3;
+	width: 95%;
+}
+
+h2 {
+	font-size: 1.55rem;
+	font-weight: 200;
+	text-transform: uppercase;
+	color: #505050;
+}
+
+h3 {
+	font-size: 1.25rem;
+	font-weight: 200;
+	margin-bottom: -1.75rem;
+	color: #666;
+}
+
+h4 {
+	font-size: 1.85rem;
+	font-weight: 200;
+	text-transform: uppercase;
+}
+
+table p, p, label {
+	font-size: 1.25rem;
+	font-weight: 300;
+	color: #242424;
+}
+
+p strong, table p strong, th {
+	font-weight: 400;
+}
+
+footer p {
+	color: #ffff;
+}
+
+footer a{
+	color: #cd7ce7;
+}
+
+#description-container a {
+	color: #77338c;	
+	padding-bottom: 0 !important;
+	text-decoration: none;
+}
+
+#description-container a:hover {
+	color: #bf4ca9;
+}
+
+p.purple {
+	color: #9d00d0;
+	font-size: 1.25rem;
+	font-weight: 200;
+	text-transform: uppercase;
+	color: #ffff;
+	background-color: #000000b3;
+	max-width: 95%;
+	margin: auto;
+	padding: .5rem 0;
+}
+
+.results-div {
+	margin: 1rem;
+	border: 1px solid #bbbbbbb3;
+	padding: 1rem 2rem 1rem 2rem;
+	max-width: 50%;
+}
+
+.average-div h2, .calculate-div h2{
+	margin: auto;
+}
+
+.average-div button, .calculate-div button {
+	margin-bottom: 0;
+}
+
+.average-div p{
+	margin-top: .5rem;
+}
+
+a {
+	color: #ffff;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #9d00d0;
+}
+
+header h2 {
+	color: #ffff;
+	position: fixed;
+}
+
+#estadísticas-title {
+	margin-bottom: 7.5rem;
+}
+
+
+select {
+	-webkit-appearance: none;
+	background-color: #ffff;
+	background: url(assets/select-arrow.png) no-repeat right #fff;
+	border-radius: 2px;
+	border: 1px solid #bbbb;
+	font-size: 1.05rem;
+	font-weight: 200;
+	padding: .5rem 3.5rem .5rem .65rem;
+	text-align: left;
+	max-width: 350px;
+}
+
+select.option {
+	max-width: 200px;
+}
+
+.button-purple {
+	background-color: #9d00d0;
+	border-radius: 2px;
+	border: none;
+	color: #ffff;
+	cursor: pointer;
+	font-size: 1.25rem;
+	font-weight: 200;
+	margin: 1.5rem auto;
+	padding: .35rem 1rem;
+	text-align: center;
+	width: 165px;
+}
+
+.button-purple:hover {
+	background-color: #818181;
+	box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+	transform: translateY(-0.15rem);
+	transition: 0.45s;
+}
+
+#results {
+	padding: 4rem 1rem 1.5rem 1rem;
+}
+
+#figure-result {
+	border: 1px double #bbbbbbb3;
+	max-width: 165px;
+	margin: 0 auto;
+	/*! border-style: double; */
+}
+
+#resultOk, #statResult{
+	/*! border-top: 1px #bbbbbbb3; */
+
+	margin: .15rem;
+	border: 1px double #bbbbbbb3;
+}
+
+footer {
+	color: #ffff;
+  	height: 100%;
+  	padding: 4rem 8rem 0.5rem 8rem;
+	background-color: #242424;
+	width: 100%;
+	margin: 0;
+}
+
+footer p {
+	font-size: .85rem;
+}
+
+#menu-mobile {
+	display: none;
+	color: #ffff;
+	position: fixed;
+	width: 100%;
+	background-color: #9d00d0;
+	bottom: 0%;
+	max-height: 3rem;
+}
+
+#menu-mobile nav{
+	padding: 0;
+}
+
+#menu-mobile ul{
+	display: flex;
+	flex-direction: row;
+	justify-content:space-around;
+	padding: .5rem 1rem;
+	margin: auto;
+}
+
+#menu-mobile li{
+	display: inline;
+	text-align: center;
+	padding: 0 1rem;
+	margin: auto;
+	border: 0;
+}
+
+#menu-mobile li.last{
+	border: 0;
+}
+
+#menu-mobile img {
+	max-height: 2rem;
+}
+
+#reload-from-mobile-menu{
+	cursor: pointer;
+}
+
+.tResults {
+	margin: auto;
+	border: 1px solid #bbbbbbb3;
+}
+
+.tResults td, .tResults tr {
+	margin: 0;
+	border: 1px solid #bbbbbbb3;
+}
+
+@media only screen and (max-width: 1200px) {
+
+	#menu-mobile {
+	display: block;
+}
+	
+	nav #main-menu {
+		display: none !important;
+	}
+
+	#logo-banco-mundial {
+		max-width: 180px;
+		margin: .75rem auto;
+		text-align: center;
+		display: block;
+	}
+
+	#description-container p{
+	padding: 1.25rem 1rem 2rem 1rem;
+	max-width: 100%;
+	margin: 0 0 -1.5rem 0;
+	}
+
+	
+	h1 {
+		text-align: center;
+		font-size: 1.25rem;
+		font-weight: 200;
+		text-transform: uppercase;
+		color: #ffff;
+		background-color: #000000b3;
+		width: 100%;
+		padding: 0 .15rem .05rem .15rem;
+		margin-top: 2rem;
+	}
+
+	h2 {
+		font-size: 1.55rem;
+		color: #3c3c3c;
+	}
+
+	#estadísticas-title {
+	margin-bottom: auto;
+	}
+
+	h4 {
+		padding: 5rem .5rem .5rem 1.5rem;
+	}
+
+	section option {
+		max-width: 300px;
+	}
+
+	header {
+		padding: 1rem .5rem 5rem .5rem;
+		position: absolute;
+		background-color: #000000b3;
+	}
+
+	header p{
+		padding-left: .5rem;
+		padding-right: .5rem;
+	}
+
+	#description-container{
+		padding: 4rem 0 1rem 0;
+		height: auto;
+	}
+
+	.button-purple:hover {
+	background-color: #818181;
+	box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+	transform: translateY(-0.25rem);
+	transition: 0.45s;
+	}
+
+	section label{
+		display: block;
+		margin: 3rem auto .05rem auto;
+	}
+
+	.label-title{
+		margin: 1rem auto -2.5rem auto;
+	}
+
+	.credits-logos {
+		display: block;
+		height: 100%;
+	}	
+
+	footer {
+		padding: 1.5rem 1rem 3rem 1rem;
+	}
+
+	.flex-column, .flex-row, .flex-row-center, .flex-row-top {
+		display: block;
+	}
+
+	p.purple {
+		padding: 1rem;
+	}
+
+	select {
+		max-width: 250px;
+	}
+
+	.flex-select {
+	margin:1rem auto;
+	max-width: 300px;
+	}
+
+	.flex-select-single {
+		max-width: 300px;
+		margin: 1rem auto 0;
+	}
+
+	.flex-select-single select, .flex-select select{
+			max-width: 160px;
+		}
+
+	.results-div {
+		margin: .5rem auto;
+		padding: 1rem;
+		max-width: 90%;
+	}
+
+}
+
+@media only screen and (max-width: 500px) {
+	
+	.flex-select-single select{
+		max-width: 140px;
+		margin: 1rem auto -2rem 0;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	
+	.flex-select-single select{
+		max-width: 250px;
+		margin: 1rem auto -5rem 0;
+		padding: 1rem 1.85rem .5rem .05rem;
+		}
+}

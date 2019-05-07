@@ -1,18 +1,163 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8">
-    <title>Data Lovers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <!-- <meta name="description" content="Explorador de datos del Banco Mundial sobre las mujeres">
+    <meta property="og:image" content="assets/peruana_mujer.png"> -->
+
+    <meta property="og:site_name" content="Explorador de datos del Banco Mundial sobre las mujeres">
+    <meta property="og:locale" content="es_MX">  
+    <meta property="og:type" content="website"> 
+    <meta property="og:title" content="Explora estadísticas sobre las mujeres" >
+    <meta property="og:description" content="Herramienta para mostrar, filtrar, ordenar y calcular estadísticas del Banco Mundial sobre las mujeres">
+    <meta property="og:url" content="https://claudiagarfias.works/laboratoria/datalovers/"> 
+    <meta property="og:image" content="https://claudiagarfias.works/laboratoria/datalovers/assets/peruana_mujer.png">
+
+    <meta name="author" content="Ana Flores & Claudia Garfias at https://www.laboratoria.la/">
+    <title>Explorador de datos sobre las mujeres</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="assets/wblabofavicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet"> 
   </head>
+
   <body>
-    <div id="root"></div>
-    <!-- <script src="./data/injuries/injuries.js"></script> -->
-    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-    <!-- <script src="./data/steam/steam.js"></script> -->
-    <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-    <!-- <script src="./data/lol/lol.js"></script> -->
+    <div id="root">
+      <header>
+          <nav class="flex-row">
+            <div class="flex-column">
+               <a id="reload-from-logo"><img src="assets/World_Bank_logo_small_purple.png" alt="World_Bank_logo" id="logo-banco-mundial"></a>
+            </div>
+            <div id="main-menu" class="flex-row">
+              <ul class="flex-row">
+                <li><a href="https://github.com/ClaudiaGarfias/GDL002-data-lovers/blob/master/README.md" target="_blank">Info</a></li>
+                <li><a href="#choose-data-inner">Filtrar Datos</a></li>
+                <li><a href="#footer">Contacto</a></li>
+              </ul>
+              <input placeholder="" class="search-bar">
+            </div>
+          </nav>
+      </header>
+
+      <section id="choose-data" >
+
+        <div class="parallax">
+          <div id="description-container">
+            <h1>Explorador de datos sobre las mujeres</h1>
+
+            <p>Esta web contiene datos sobre las mujeres de 4 países: <strong>México, Perú , Chile y Brasil</strong>.<br>Estos datos fueron tomados del <a href="http://www.bancomundial.org/" target="_blank">Banco Mundial</a> y curados por el equipo de <a href="https://www.laboratoria.la/" target="_blank">Laboratoria</a>.</p><br>
+            <h2>¿A quién va dirigido este sitio?</h2><p>A todos los interesados en compilar información sobre las condiciones: <strong>sociales, familiares, económicas, demográficas, de igualdad</strong>, entre otras, del sexo femenino. <br>Aquí también pueden compararse datos de ambos sexos, por lo que se incluyen estadísticas sobre los hombres.</p><br>
+            <br><p class="purple">En esta web los datos se pueden: <strong><br><span class="flex-row-center">｜ filtrar ｜ ordenar ｜ promediar ｜ </span></strong></p>
+          </div>
+        </div>
+
+        <section id="choose-data-inner">
+          <h2>Filtrar datos:</h2>
+
+          <div class="flex-row-center">
+            <div class="flex-select"><!--filtar por país-->
+              <h3>PAÍS</h3><br>
+              <select id = "select-country"> 
+                <option value="">Selecciona</option> <!--opción fija del selector-->
+              </select>
+            </div>
+            <div class="flex-select"><!--filtar por indicador-->
+              <h3>INDICADOR</h3> <br>
+              <select id ="select-indicator"> 
+                <option value="">Selecciona</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="flex-select-single">
+            <h3 class="label-title">AÑO</h3> 
+            <div class="flex-row-center">
+              <!-- opcion filtar por año "since" -->
+              <div class="years-select">
+                <label for="since-year">Desde: </label>
+                <select id ="since-year"> 
+                  <option value="">Selecciona</option> 
+                </select> 
+              </div>
+
+               <!-- opcion filtar por año "until"-->
+              <div class="years-select">
+                <label for="until-year">Hasta: </label> 
+                <select id ="until-year">
+                  <option value="">Selecciona</option> 
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <button id = "search" class="button-purple">BUSCAR</button> 
+
+        </section><!--final de la section "choose-data-inner"-->
+
+      </section><!--final de la section "choose-data"-->
+      
+      <!-- SECCION  PARA MOSTRAR RESULTADOS -->
+      <section id="results" hidden>
+                
+        <h4>Resultados de la búsqueda:</h4>
+        <p id ="country-result"></p>
+        <p id= "indicator-result" ></p>
+        <p id= "year-result" ></p> 
+        <p><strong>*ND</strong>= Estadística vacía (No hay Dato).</p>
+         
+        <div id="order-results" class="flex-row-top">
+          <div class="average-div results-div">
+            <h2 id="estadísticas-title">MOSTRAR ESTADÍSTICAS:</h2>
+
+            <p id= "figure-result"></p>
+          </div>
+          <div class="calculate-div results-div">
+            <h2>ORDENAR ESTADÍSTICAS:</h2>
+            <button  id="sortMax" class="button-purple">DESCENDENTE</button>
+            <button  id="sortMin" class="button-purple">ASCENDENTE</button>
+            <p id="order-min-result"></p>
+            <p id="order-max-result"></p>
+          </div>
+          <div class="average-div results-div">
+            <h2>CALCULAR PROMEDIO:</h2>
+            <button  id="average" class="button-purple">Promediar</button>
+            <p>*El promedio <i>excluye</i> las estadísticas vacías (<i>ND</i>).</p>
+            <p id="print-average" class="print-average-style"></p>
+          </div>
+        </div>
+        <button  id="reload" class="button-purple">Regresar</button>
+
+      </section><!--final de la section "results"-->
+
+      <div class="parallax-credits">
+        <div class="credits">
+          <p>Esta web fue creada gracias a la colaboración de:</p>
+          <div class="flex-row-center">
+            <a href="http://www.bancomundial.org/" target="_blank"><img src="assets/World_Bank_logo_small_purple.png" alt="World_Bank_logo_small_purple"></a> 
+            <a href="https://www.gob.mx/inmujeres/" target="_blank"><img src="assets/logo-inm-mex.png" alt="logo-inm-mex.png"></a>
+            <a href="https://www.laboratoria.la/" target="_blank"><img src="assets/logo_laboratoria_small_pink.png" alt="logo_laboratoria_small_pink"></a> 
+          </div>
+        </div>
+      </div>
+
+      <footer id="footer">
+        <p><strong>©2019</strong> Diseño y código por: <a href="https://github.com/AnaFR" target="_blank">Ana Laura Flores Rosas</a>, <a href="https://claudiagarfias.works/" target="_blank">Claudia Garfias</a> & Liz García.<br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Licencia Creative Commons</a><br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Licencia Creative Commons" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"/></a></p>   
+      </footer> 
+
+      <div id="menu-mobile">
+        <ul>
+          <li><a id="reload-from-mobile-menu"><img src="assets/home.png" alt="home icon"></a></li>
+          <li><a href="https://github.com/ClaudiaGarfias/GDL002-data-lovers/blob/master/README.md" target="_blank"><img src="assets/info.png" alt="info icon"></a></li>
+          <li><a href="#choose-data-inner"><img src="assets/filtrar.png" alt="filtrar icon"></a></li>
+          <li class="last"><a href="#footer"><img src="assets/contacto.png" alt="contacto icon"></a></li>
+              </ul>
+      </div>
+   
+     </div><!--final del div "root"-->
+
+    <script src="./data/worldbank/worldbank.js"></script> 
     <script src="data.js"></script>
     <script src="main.js"></script>
+
   </body>
 </html>
